@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DGSP – Digital Government Service Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+
+<div class="tricolor"></div>
+
+<!-- ══ NAVBAR ══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-badge">🇮🇳</div>
+      <div>
+        <div class="logo-text"><em>DGSP</em></div>
+        <div class="logo-sub">Digital Gov Service Platform</div>
+      </div>
+    </a>
+    <div class="nav-search">
+      <span class="si">🔍</span>
+      <input type="text" id="navSearch" placeholder="Search services… PAN, Aadhaar, Passport" oninput="searchSvcs(this.value)" onblur="setTimeout(()=>closeDrop(),150)" onfocus="if(this.value)searchSvcs(this.value)"/>
+      <div class="search-drop" id="searchDrop"></div>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a class="map-link" onclick="openMapOverlay()">🗺️ Map</a>
+      <a href="#about">About</a>
+      <a href="#steps">How It Works</a>
+      <a href="#track">Tracker</a>
+      <a href="login\login.html" class="btn-login">Login / Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-slides" id="heroSlides"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">🇮🇳 &nbsp;Government of India Initiative</div>
+      <h1>Digital <span class="hi">Government</span><br/>Service Platform</h1>
+      <p>One unified gateway to all Indian government services — fast, transparent and accessible from anywhere. Empowering every citizen with AI-powered step-by-step guidance.</p>
+      <div class="hbtns">
+        <a href="#services" class="btn-main">Explore Services</a>
+        <button class="btn-ghost" onclick="openChat()">Ask AI Assistant 🤖</button>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num">1200+</div><div class="stat-lbl">Government Services</div></div>
+      <div class="stat"><div class="stat-num">28+</div><div class="stat-lbl">States Connected</div></div>
+      <div class="stat"><div class="stat-num">36</div><div class="stat-lbl">States & UTs</div></div>
+      <div class="stat"><div class="stat-num">24/7</div><div class="stat-lbl">AI Support</div></div>
+    </div>
+  </div>
+  <div class="slide-dots" id="slideDots"></div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="svc-sec" id="services">
+  <div class="sec">
+    <div class="sec-tag">Our Services</div>
+    <h2>1200+ Government <span>Services</span></h2>
+    <p>Find, apply and track every central and state government service</p>
+    <div class="divbar"></div>
+  </div>
+  <div class="svc-controls">
+    <button class="svc-ctrl-btn" onclick="svcScroll(-1)">◀</button>
+    <span class="svc-ctrl-info"></span>
+    <button class="svc-ctrl-btn" onclick="svcScroll(1)">▶</button>
+  </div>
+  <div class="sw"><div class="st" id="svcT"></div></div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="how-sec" id="steps">
+  <div class="how-inner">
+    <div class="sec">
+      <div class="sec-tag">How It Works</div>
+      <h2>Step-by-Step <span>Guidance</span></h2>
+      <p>Simple 4-step process to access any government service in minutes</p>
+      <div class="divbar"></div>
+    </div>
+    <div class="how-grid">
+      <div class="how-card"><div class="how-n">1</div><h3>Register / Login</h3><p>Create your secure DGSP account with Aadhaar or mobile number. Fast, safe and one-time setup.</p></div>
+      <div class="how-card"><div class="how-n">2</div><h3>Search Service</h3><p>Use the smart search bar to quickly find your required government service.</p></div>
+      <div class="how-card"><div class="how-n">3</div><h3>AI Guides You</h3><p>Our AI assistant walks you through every document, form and procedure step-by-step.</p></div>
+      <div class="how-card"><div class="how-n">4</div><h3>Submit & Track</h3><p>Submit your application and track real-time status using the Progress Tracker.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRACKER ══ -->
+<section class="track-sec" id="track">
+  <div class="track-inner">
+    <div class="sec">
+      <div class="sec-tag">Progress Tracker</div>
+      <h2>Track Your <span>Application</span></h2>
+      <div class="divbar"></div>
+    </div>
+    <div style="max-width:680px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:2.5rem 2rem;text-align:center">
+      <div style="font-size:3.5rem;margin-bottom:1rem">📋</div>
+      <p style="color:var(--muted);font-size:1rem;line-height:1.75;margin-bottom:1.5rem">Monitor every step of your government service application in real time. From submission to final approval — stay informed, stay ahead.</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-bottom:1.8rem">
+        <div style="background:rgba(255,107,0,.1);border:1px solid rgba(255,107,0,.2);border-radius:12px;padding:.7rem 1.1rem;font-size:.82rem;color:var(--gold);font-weight:600">📤 Submitted</div>
+        <div style="background:rgba(255,107,0,.1);border:1px solid rgba(255,107,0,.2);border-radius:12px;padding:.7rem 1.1rem;font-size:.82rem;color:var(--gold);font-weight:600">🔍 Under Review</div>
+        <div style="background:rgba(255,107,0,.1);border:1px solid rgba(255,107,0,.2);border-radius:12px;padding:.7rem 1.1rem;font-size:.82rem;color:var(--gold);font-weight:600">✅ Approved</div>
+        <div style="background:rgba(255,107,0,.1);border:1px solid rgba(255,107,0,.2);border-radius:12px;padding:.7rem 1.1rem;font-size:.82rem;color:var(--gold);font-weight:600">🚚 Dispatched</div>
+      </div>
+      <button class="btn-main" onclick="openChat()" style="font-size:.9rem;padding:.75rem 1.8rem">Ask AI to Track My Application 🤖</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="ab-sec" id="about">
+  <div class="ab-inner">
+    <div class="ab-left">
+      <div class="sec-tag" style="margin-bottom:1rem">About DGSP</div>
+      <h2>What is <span>DGSP</span>?</h2>
+      <p>The Digital Government Service Platform is India's unified digital gateway, designed to simplify access to every central and state government service. From Aadhaar to agriculture, from PAN to public health — DGSP brings it all under one roof.</p>
+      <p>With AI-powered assistance, step-by-step guidance, and multi-language support, DGSP ensures no citizen is left behind in India's digital transformation journey.</p>
+      <div class="ab-tags">
+        <span class="ab-tag">🏛️ Single Platform</span>
+        <span class="ab-tag">🧭 Easy Navigation</span>
+        <span class="ab-tag">📍 Office Locator</span>
+        <span class="ab-tag">✅ Progress Tracker</span>
+        <span class="ab-tag">🤖 AI Guidance</span>
+        <span class="ab-tag">🌐 All States</span>
+      </div>
+    </div>
+    <div class="feats">
+      <div class="feat"><div class="fi">🛡️</div><h4>Secure</h4><p>Bank-grade encryption & DigiLocker integration</p></div>
+      <div class="feat"><div class="fi">🌐</div><h4>Multilingual</h4><p>Available in 22 official Indian languages</p></div>
+      <div class="feat"><div class="fi">📱</div><h4>Mobile First</h4><p>Optimized for every device, even 2G networks</p></div>
+      <div class="feat"><div class="fi">🤖</div><h4>AI Powered</h4><p>Smart assistant guides every step</p></div>
+      <div class="feat"><div class="fi">⚡</div><h4>Fast Track</h4><p>Tatkaal and priority processing</p></div>
+      <div class="feat"><div class="fi">📊</div><h4>Live Tracking</h4><p>Real-time application status</p></div>
+    </div>
+  </div>
+</section>
+
+<!--  FOOTER -->
+<footer>
+  <div class="fl">🇮🇳 DGSP</div>
+  <div class="flinks">
+    <a href="#">Privacy Policy</a><a href="#">Terms of Use</a>
+    <a href="#">Accessibility</a><a href="#">Contact Us</a><a href="#">RTI</a>
+  </div>
+  <p>© 2026 Digital Government Service Platform — Government of India Initiative<br/>Designed for every citizen of Bharat 🙏</p>
+</footer>
+
+<!-- ══ CHATBOT ══ -->
+<button class="cfab" id="cfab" onclick="toggleChat()"><span class="co">🤖</span><span class="cc">✕</span></button>
+<div class="cwin" id="cwin">
+  <div class="ch">
+    <div class="cav">🤖</div>
+    <div class="cht"><h4>DGSP AI Assistant</h4><p><span class="dl"></span>Online — Ready to help</p></div>
+  </div>
+  <div class="cms" id="cms">
+    <div class="msg bot">
+      <div class="mav">🤖</div>
+      <div><div class="mb">🙏 Namaste! I'm your DGSP AI Assistant.<br/>Ask me about any government service, document requirements, or how to find nearest offices.</div><div class="mt">Just now</div></div>
+    </div>
+  </div>
+  <div class="qar" id="qar">
+    <button class="qb" onclick="sendQ('PAN Card apply')">PAN Card</button>
+    <button class="qb" onclick="sendQ('Aadhaar update')">Aadhaar</button>
+    <button class="qb" onclick="sendQ('Passport apply')">Passport</button>
+    <button class="qb" onclick="sendQ('Voter ID registration')">Voter ID</button>
+    <button class="qb" onclick="sendQ('Driving Licence')">Driving Licence</button>
+  </div>
+  <div class="cinp">
+    <input type="text" id="cin" placeholder="Type your question..." onkeypress="kp(event)"/>
+    <button class="sbtn" onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
+<!-- FULL-SCREEN MAP OVERLAY -->
+<div id="mapOverlay">
+
+  <!-- Header -->
+  <div class="map-overlay-header">
+    <div class="map-overlay-logo">
+      <div class="lb">🇮🇳</div>
+      <span class="lt"><em>DGSP</em></span>
+    </div>
+    <div class="map-overlay-center">
+      <h1>India — States &amp; Districts Interactive Map</h1>
+      <p>All 28 States + 8 Union Territories • 756+ Districts</p>
+    </div>
+    <button class="btn-close-map" onclick="closeMapOverlay()">✕ Close Map</button>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="map-stats-bar">
+    <span>🗺️ <strong>28</strong> States</span>
+    <span>🏛️ <strong>8</strong> Union Territories</span>
+    <span>📍 <strong>756</strong> Districts</span>
+    <span>🌏 Area: <strong>3.29M km²</strong></span>
+    <span id="mapSelectedState" style="margin-left:auto;color:rgba(255,255,255,.5)">Click any state or district to explore</span>
+  </div>
+
+  <!-- Body: sidebar + map -->
+  <div class="map-body">
+
+    <!-- Sidebar -->
+    <div class="map-sidebar" id="mapSidebar">
+      <div class="sidebar-hdr">
+        <h3>📋 States &amp; UTs</h3>
+        <div class="map-search-box">
+          <input type="text" id="mapStateSearch" placeholder="Search state or district…" oninput="filterMapStates()"/>
+          <button onclick="clearMapSearch()">✕</button>
+        </div>
+      </div>
+      <div class="state-list" id="mapStateList"></div>
+      <div class="districts-panel" id="mapDistrictsPanel" style="display:none">
+        <div class="districts-panel-header" id="mapDistrictsPanelTitle">Districts</div>
+        <div id="mapDistrictsList"></div>
+      </div>
+    </div>
+
+    <!-- Leaflet Map -->
+    <div id="leafletMap"></div>
+
+    <!-- Mobile sidebar toggle -->
+    <button class="map-toggle-btn" id="mapToggleBtn" onclick="toggleMapSidebar()">☰ States</button>
+
+    <!-- View toggle -->
+    <div class="map-view-toggle">
+      <button class="vt-btn active" id="btnStates" onclick="switchMapView('states')">States</button>
+      <button class="vt-btn" id="btnDistricts" onclick="switchMapView('districts')">Districts</button>
+    </div>
+
+    <!-- Info panel -->
+    <div class="map-info-panel" id="mapInfoPanel">
+      <span class="info-close" onclick="closeMapInfo()">✕</span>
+      <h3 id="mapInfoTitle">—</h3>
+      <div class="isub" id="mapInfoSub">—</div>
+      <div id="mapInfoRows"></div>
+      <button class="info-svc-btn" onclick="closeMapOverlay();document.getElementById('services').scrollIntoView({behavior:'smooth'})">View Services →</button>
+    </div>
+
+    <!-- Legend -->
+    <div class="map-legend">
+      <h4>Legend</h4>
+      <div class="legend-item"><div class="legend-color" style="background:#1e6b9c"></div>State</div>
+      <div class="legend-item"><div class="legend-color" style="background:#2a8a5e"></div>District</div>
+      <div class="legend-item"><div class="legend-color" style="background:#FF6B00"></div>Selected</div>
+      <div class="legend-item"><div class="legend-color" style="background:#F7A900;opacity:.8"></div>Hover</div>
+    </div>
+
+    <!-- Loader -->
+    <div class="map-loader" id="mapLoader">
+      <div class="loader-flag">🇮🇳</div>
+      <div class="loader-ring"></div>
+      <div style="font-size:.9rem;color:rgba(255,255,255,.6)" id="mapLoaderText">Loading India Map…</div>
+    </div>
+
+  </div><!-- /map-body -->
+</div><!-- /mapOverlay -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="index.js"></script>
+
+
+
+</body>
+</html>

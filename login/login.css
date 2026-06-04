@@ -1,0 +1,107 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: linear-gradient(321deg, #091939, #0f377d);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+    .header {
+      padding: 24px;
+      text-align: center;
+      background: #0d47a1;
+      color: white;
+    }
+    .header h1 {
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .tabs {
+      display: flex;
+      background: #f5f5f5;
+    }
+    .tab {
+      flex: 1;
+      padding: 14px 0;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      font-weight: 500;
+    }
+    .tab.active {
+      border-bottom-color: #0d47a1;
+      color: #0d47a1;
+    }
+    .forms {
+      padding: 24px;
+      display: none;
+    }
+    .forms.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: #0d47a1;
+      box-shadow: 0 0 0 2px rgba(13, 71, 161, 0.15);
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #0d47a1;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #0b3c8a;
+    }
+    .footer {
+      padding: 12px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      background: #f9f9f9;
+      border-top: 1px solid #eee;
+    }
+    .error {
+      color: #c62828;
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
