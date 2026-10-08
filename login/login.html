@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Government Service Platform</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Digital Government Services</h1>
+      <p>Secure login for citizens and officials</p>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active" data-form="login">Login</div>
+      <div class="tab" data-form="signup">Sign Up</div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-form" class="forms active">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="login-email" placeholder="Enter your email" required />
+        <div id="login-email-error" class="error"></div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="login-password" placeholder="Enter your password" required />
+        <div id="login-password-error" class="error"></div>
+      </div>
+     <button class="btn" onclick="handleLogin()">Login</button>
+      
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signup-form" class="forms">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="signup-name" placeholder="Enter your full name" required />
+        <div id="signup-name-error" class="error"></div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="signup-email" placeholder="Enter your email" required />
+        <div id="signup-email-error" class="error"></div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="signup-password" placeholder="Create a password" required />
+        <div id="signup-password-error" class="error"></div>
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" id="signup-confirm" placeholder="Confirm your password" required />
+        <div id="signup-confirm-error" class="error"></div>
+      </div>
+      <a href="form\form.html"><button class="btn" onclick="handleLogin()">Sign Up</button> </a>
+    </div>
+
+    <div class="footer">
+      © 2026 Digital Government Service Platform
+    </div>
+  </div>
+
+ <script src="login.js"></script>
+</body>
+</html>

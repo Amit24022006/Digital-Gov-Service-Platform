@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>DGSP — Citizen Registration Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="form.css">
+</head>
+<body>
+<div class="tricolor"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <div class="logo-badge">IN</div>
+      <div>
+        <div class="logo-text">DG<em>SP</em></div>
+        <div class="logo-sub">Digital Gov Service Platform</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="form.html">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Help</a>
+      <a class="btn-login" href="#">Login / Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="emblem">🇮🇳</span>
+  <div class="page-hero-tag">🏛️ Official Government Form</div>
+  <h1>Citizen <span>Registration</span> Form</h1>
+  <p>Register your details on the Digital Government Service Platform. Your information is encrypted and linked to your Aadhaar for seamless service access.</p>
+  <div class="ref-num">Form No: <strong>DGSP-CRF-2025</strong> &nbsp;|&nbsp; Ministry of Electronics &amp; Information Technology</div>
+</div>
+
+<div class="form-wrap">
+  <div class="notice">
+    <span class="notice-icon">⚠️</span>
+    <div>Please fill all fields marked with <span style="color:var(--saffron);font-weight:700">*</span> carefully. Ensure your Aadhaar number and mobile number are correct. Submission of false information is a punishable offence under IT Act 2000.</div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-bar-wrap">
+    <div class="progress-steps" id="progressSteps">
+      <div class="progress-fill" id="progressFill" style="width:0%"></div>
+      <div class="pstep active" data-step="1"><div class="pstep-circle">1</div><div class="pstep-label">Aadhaar</div></div>
+      <div class="pstep" data-step="2"><div class="pstep-circle">2</div><div class="pstep-label">Personal</div></div>
+      <div class="pstep" data-step="3"><div class="pstep-circle">3</div><div class="pstep-label">Address</div></div>
+      <div class="pstep" data-step="4"><div class="pstep-circle">4</div><div class="pstep-label">Contact</div></div>
+      <div class="pstep" data-step="5"><div class="pstep-circle">5</div><div class="pstep-label">Review</div></div>
+    </div>
+    <div class="progress-text">Step <strong id="curStep">1</strong> of <strong>5</strong></div>
+  </div>
+
+  <!-- STEP 1: AADHAAR -->
+  <div class="form-section active" id="section1">
+    <div class="form-card">
+      <div class="form-card-title">
+        <div class="form-card-icon">🪪</div>
+        <div><h3>Aadhaar Verification</h3><p>Enter your 12-digit Aadhaar number to auto-fill basic details</p></div>
+      </div>
+      <div class="fg fg-1">
+        <div class="field">
+          <label>Aadhaar Number <span class="req">*</span></label>
+          <div class="aadhaar-segments">
+            <input type="text" id="aad1" maxlength="4" placeholder="XXXX" oninput="aadMove(this,'aad2')" onpaste="aadPaste(event)"/>
+            <input type="text" id="aad2" maxlength="4" placeholder="XXXX" oninput="aadMove(this,'aad3')" onkeydown="aadBack(event,'aad1')"/>
+            <input type="text" id="aad3" maxlength="4" placeholder="XXXX" oninput="aadDone()" onkeydown="aadBack(event,'aad2')"/>
+            <button class="aadhaar-verify" onclick="verifyAadhaar()">Verify →</button>
+          </div>
+          <div class="err-msg" id="aadErr">⚠ Please enter a valid 12-digit Aadhaar number</div>
+        </div>
+
+        <div id="otpSection" style="display:none">
+          <div class="field" style="margin-top:1rem">
+            <label>OTP sent to linked mobile <span class="req">*</span></label>
+            <div class="otp-group">
+              <input type="text" maxlength="1" id="o1" oninput="otpMove(this,'o2')"/>
+              <input type="text" maxlength="1" id="o2" oninput="otpMove(this,'o3')" onkeydown="otpBack(event,'o1')"/>
+              <input type="text" maxlength="1" id="o3" oninput="otpMove(this,'o4')" onkeydown="otpBack(event,'o2')"/>
+              <input type="text" maxlength="1" id="o4" oninput="otpMove(this,'o5')" onkeydown="otpBack(event,'o3')"/>
+              <input type="text" maxlength="1" id="o5" oninput="otpMove(this,'o6')" onkeydown="otpBack(event,'o4')"/>
+              <input type="text" maxlength="1" id="o6" oninput="otpDone()" onkeydown="otpBack(event,'o5')"/>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.3rem">
+              <div style="color:var(--muted);font-size:.72rem">Demo OTP: <strong style="color:var(--gold)">1 2 3 4 5 6</strong></div>
+              <button onclick="startOtpTimer()" style="background:none;border:none;color:var(--gold);font-size:.75rem;cursor:pointer;font-family:inherit">Resend (<span id="otpTimer">30</span>s)</button>
+            </div>
+            <div class="err-msg" id="otpErr">⚠ Invalid OTP. Please check and try again.</div>
+            <button class="btn-next" style="margin-top:.8rem;width:fit-content" onclick="confirmOtp()">
+              <span>Confirm OTP</span><div class="spinner" id="otpSpinner"></div>
+            </button>
+          </div>
+        </div>
+
+        <div id="aadSuccess" style="display:none;margin-top:.5rem">
+          <div class="autofill-note">✅ Aadhaar verified successfully. Basic details auto-filled below.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card" id="photoCard" style="display:none">
+      <div class="form-card-title">
+        <div class="form-card-icon">📷</div>
+        <div><h3>Passport-size Photo</h3><p>Upload a recent clear photo (JPG/PNG, max 2MB)</p></div>
+      </div>
+      <div class="photo-zone" id="photoZone">
+        <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto(event)"/>
+        <img class="photo-preview" id="photoPreview" alt="Preview"/>
+        <div class="photo-icon" id="photoIcon">📸</div>
+        <strong>Click or drag to upload photo</strong>
+        <p>JPG, PNG &nbsp;•&nbsp; Max 2 MB &nbsp;•&nbsp; Passport-size</p>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <div></div>
+      <button class="btn-next" id="step1NextBtn" onclick="goStep(2)" style="display:none">Personal Details →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: PERSONAL -->
+  <div class="form-section" id="section2">
+    <div class="form-card">
+      <div class="form-card-title">
+        <div class="form-card-icon">👤</div>
+        <div><h3>Personal Information</h3><p>As per official documents</p></div>
+      </div>
+      <div class="fg fg-3" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>First Name <span class="req">*</span></label>
+          <input type="text" id="fname" placeholder="e.g. Rajesh"/>
+          <div class="err-msg" id="fnameErr">⚠ Required</div>
+        </div>
+        <div class="field">
+          <label>Middle Name</label>
+          <input type="text" id="mname" placeholder="e.g. Kumar"/>
+        </div>
+        <div class="field">
+          <label>Last Name / Surname <span class="req">*</span></label>
+          <input type="text" id="lname" placeholder="e.g. Sharma"/>
+          <div class="err-msg" id="lnameErr">⚠ Required</div>
+        </div>
+      </div>
+      <div class="fg fg-3" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>Date of Birth <span class="req">*</span></label>
+          <input type="date" id="dob" max="2007-01-01" onchange="calcAge()"/>
+          <div class="help" id="ageDisplay" style="margin-top:.2rem"></div>
+        </div>
+        <div class="field">
+          <label>Age</label>
+          <input type="text" id="ageField" placeholder="Auto-calculated" readonly style="background:rgba(255,255,255,.03);color:var(--gold);font-weight:700"/>
+        </div>
+        <div class="field">
+          <label>Gender <span class="req">*</span></label>
+          <select id="gender">
+            <option value="">Select Gender</option>
+            <option>Male</option><option>Female</option>
+            <option>Transgender</option><option>Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg fg-2" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>Category <span class="req">*</span></label>
+          <select id="category">
+            <option value="">Select Category</option>
+            <option>General</option><option>OBC</option>
+            <option>SC</option><option>ST</option><option>EWS</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Marital Status</label>
+          <select id="marital">
+            <option value="">Select Status</option>
+            <option>Unmarried / Single</option><option>Married</option>
+            <option>Divorced</option><option>Widowed</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg fg-2">
+        <div class="field">
+          <label>Nationality <span class="req">*</span></label>
+          <select id="nationality">
+            <option value="Indian" selected>Indian</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Religion</label>
+          <select id="religion">
+            <option value="">Select (Optional)</option>
+            <option>Hindu</option><option>Muslim</option><option>Christian</option>
+            <option>Sikh</option><option>Buddhist</option><option>Jain</option>
+            <option>Zoroastrian</option><option>Other</option><option>Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-card-title">
+        <div class="form-card-icon">🎓</div>
+        <div><h3>Education &amp; Occupation</h3></div>
+      </div>
+      <div class="fg fg-2">
+        <div class="field">
+          <label>Highest Qualification</label>
+          <select id="education">
+            <option value="">Select</option>
+            <option>Below 10th</option><option>10th (SSC/Matric)</option>
+            <option>12th (HSC/Intermediate)</option><option>Diploma</option>
+            <option>Graduate (BA/BSc/BCom etc.)</option>
+            <option>Post Graduate</option><option>Doctorate (PhD)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Occupation</label>
+          <select id="occupation">
+            <option value="">Select</option>
+            <option>Student</option><option>Government Employee</option>
+            <option>Private Employee</option><option>Self-Employed / Business</option>
+            <option>Farmer</option><option>Daily Wage Worker</option>
+            <option>Homemaker</option><option>Retired</option><option>Unemployed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-back" onclick="goStep(1)">← Aadhaar</button>
+      <div style="display:flex;align-items:center;gap:1rem">
+        <button class="draft-btn" onclick="saveDraft()">💾 Save Draft</button>
+        <button class="btn-next" onclick="validateStep2()">Address Details →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: ADDRESS -->
+  <div class="form-section" id="section3">
+    <div class="form-card">
+      <div class="form-card-title">
+        <div class="form-card-icon">🏡</div>
+        <div><h3>Permanent Address</h3><p>As per Aadhaar / Voter ID</p></div>
+      </div>
+      <div class="fg fg-1" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>House No. / Flat / Building <span class="req">*</span></label>
+          <input type="text" id="hno" placeholder="e.g. 12-B, Shanti Niwas"/>
+        </div>
+      </div>
+      <div class="fg fg-2" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>Street / Road / Mohalla</label>
+          <input type="text" id="street" placeholder="e.g. Gandhi Marg"/>
+        </div>
+        <div class="field">
+          <label>Village / Town / Colony <span class="req">*</span></label>
+          <input type="text" id="village" placeholder="e.g. Rampur Village"/>
+        </div>
+      </div>
+      <div class="fg fg-3" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>Post Office <span class="req">*</span></label>
+          <input type="text" id="po" placeholder="e.g. Rampur P.O."/>
+        </div>
+        <div class="field">
+          <label>Police Station <span class="req">*</span></label>
+          <input type="text" id="ps" placeholder="e.g. Rampur Thana"/>
+        </div>
+        <div class="field">
+          <label>Tehsil / Taluka</label>
+          <input type="text" id="tehsil" placeholder="e.g. Rampur"/>
+        </div>
+      </div>
+      <div class="fg fg-3" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>District <span class="req">*</span></label>
+          <input type="text" id="district" placeholder="e.g. Lucknow"/>
+        </div>
+        <div class="field">
+          <label>State / UT <span class="req">*</span></label>
+          <select id="state">
+            <option value="">Select State</option>
+            <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
+            <option>Bihar</option><option>Chhattisgarh</option><option>Goa</option>
+            <option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option>
+            <option>Jharkhand</option><option>Karnataka</option><option>Kerala</option>
+            <option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option>
+            <option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option>
+            <option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
+            <option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option>
+            <option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option>
+            <option>West Bengal</option><option>Andaman &amp; Nicobar Islands</option>
+            <option>Chandigarh</option><option>Delhi</option>
+            <option>Jammu &amp; Kashmir</option><option>Ladakh</option>
+            <option>Lakshadweep</option><option>Puducherry</option>
+            <option>Dadra &amp; Nagar Haveli and Daman &amp; Diu</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>PIN Code <span class="req">*</span></label>
+          <input type="text" id="pincode" maxlength="6" placeholder="6-digit PIN" oninput="lookupPin(this)"/>
+          <div class="pincode-found" id="pincodeFound"></div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Landmark (Optional)</label>
+        <input type="text" id="landmark" placeholder="e.g. Near Shiva Temple, Opp. Primary School"/>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-card-title">
+        <div class="form-card-icon">📮</div>
+        <div><h3>Current / Correspondence Address</h3></div>
+      </div>
+      <label class="check-item" style="margin-bottom:1rem">
+        <input type="checkbox" id="sameAddr" onchange="toggleSameAddr(this)"/>
+        <span>Same as Permanent Address</span>
+      </label>
+      <div id="currAddrFields">
+        <div class="fg fg-2" style="margin-bottom:1.2rem">
+          <div class="field">
+            <label>House No. / Address Line 1</label>
+            <input type="text" id="c_hno" placeholder="House No."/>
+          </div>
+          <div class="field">
+            <label>Village / Town</label>
+            <input type="text" id="c_village" placeholder="Village / Town"/>
+          </div>
+        </div>
+        <div class="fg fg-3">
+          <div class="field">
+            <label>District</label>
+            <input type="text" id="c_district" placeholder="District"/>
+          </div>
+          <div class="field">
+            <label>State / UT</label>
+            <select id="c_state">
+              <option value="">Select State</option>
+              <option>Andhra Pradesh</option><option>Bihar</option><option>Delhi</option>
+              <option>Gujarat</option><option>Karnataka</option><option>Kerala</option>
+              <option>Maharashtra</option><option>Rajasthan</option><option>Tamil Nadu</option>
+              <option>Uttar Pradesh</option><option>West Bengal</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>PIN Code</label>
+            <input type="text" id="c_pin" maxlength="6" placeholder="PIN Code"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-back" onclick="goStep(2)">← Personal</button>
+      <div style="display:flex;align-items:center;gap:1rem">
+        <button class="draft-btn" onclick="saveDraft()">💾 Save Draft</button>
+        <button class="btn-next" onclick="validateStep3()">Contact Details →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: CONTACT -->
+  <div class="form-section" id="section4">
+    <div class="form-card">
+      <div class="form-card-title">
+        <div class="form-card-icon">📱</div>
+        <div><h3>Contact Information</h3><p>Mobile &amp; email registered with Aadhaar preferred</p></div>
+      </div>
+      <div class="fg fg-2" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>Mobile Number (Aadhaar-linked) <span class="req">*</span></label>
+          <div style="position:relative">
+            <input type="tel" id="mobile" maxlength="10" placeholder="10-digit mobile" style="padding-left:3.5rem" oninput="validateMobile()"/>
+            <span style="position:absolute;left:.85rem;top:50%;transform:translateY(-50%);font-size:.82rem;color:var(--muted);pointer-events:none">🇮🇳+91</span>
+          </div>
+          <div class="err-msg" id="mobileErr">⚠ Enter valid 10-digit mobile number</div>
+        </div>
+        <div class="field">
+          <label>Alternate Mobile Number</label>
+          <div style="position:relative">
+            <input type="tel" id="altmobile" maxlength="10" placeholder="Optional" style="padding-left:3.5rem"/>
+            <span style="position:absolute;left:.85rem;top:50%;transform:translateY(-50%);font-size:.82rem;color:var(--muted);pointer-events:none">🇮🇳+91</span>
+          </div>
+        </div>
+      </div>
+      <div class="fg fg-2" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>Email Address (Aadhaar-linked) <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="you@example.com" oninput="validateEmail()"/>
+          <div class="err-msg" id="emailErr">⚠ Enter valid email address</div>
+        </div>
+        <div class="field">
+          <label>Alternate Email Address</label>
+          <input type="email" id="altemail" placeholder="Optional"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-card-title">
+        <div class="form-card-icon">🔒</div>
+        <div><h3>Create Portal Password</h3><p>For future login to DGSP portal</p></div>
+      </div>
+      <div class="fg fg-2">
+        <div class="field">
+          <label>Password <span class="req">*</span></label>
+          <div style="position:relative">
+            <input type="password" id="pwd" placeholder="Min 8 characters" oninput="checkStrength()" style="padding-right:2.8rem"/>
+            <span onclick="togglePwd('pwd')" style="position:absolute;right:.85rem;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1rem;user-select:none">👁</span>
+          </div>
+          <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+          <div class="strength-text" id="strengthText">Enter a password</div>
+        </div>
+        <div class="field">
+          <label>Confirm Password <span class="req">*</span></label>
+          <div style="position:relative">
+            <input type="password" id="cpwd" placeholder="Re-enter password" oninput="checkMatch()" style="padding-right:2.8rem"/>
+            <span onclick="togglePwd('cpwd')" style="position:absolute;right:.85rem;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1rem;user-select:none">👁</span>
+          </div>
+          <div class="err-msg" id="pwdErr">⚠ Passwords do not match</div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="form-card">
+      <div class="form-card-title">
+        <div class="form-card-icon">👥</div>
+        <div><h3>Family Details</h3></div>
+      </div>
+      <div class="fg fg-2" style="margin-bottom:1.2rem">
+        <div class="field">
+          <label>Father's Name <span class="req">*</span></label>
+          <input type="text" id="fathername" placeholder="Father's full name"/>
+        </div>
+        <div class="field">
+          <label>Mother's Name <span class="req">*</span></label>
+          <input type="text" id="mothername" placeholder="Mother's full name"/>
+        </div>
+      </div>
+      <div class="fg fg-2">
+        <div class="field">
+          <label>Spouse Name</label>
+          <input type="text" id="spousename" placeholder="If married"/>
+        </div>
+        <div class="field">
+          <label>Emergency Contact Number</label>
+          <div style="position:relative">
+            <input type="tel" id="emergency" maxlength="10" placeholder="10-digit" style="padding-left:3.5rem"/>
+            <span style="position:absolute;left:.85rem;top:50%;transform:translateY(-50%);font-size:.82rem;color:var(--muted);pointer-events:none">🇮🇳+91</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-back" onclick="goStep(3)">← Address</button>
+      <div style="display:flex;align-items:center;gap:1rem">
+        <button class="draft-btn" onclick="saveDraft()">💾 Save Draft</button>
+        <button class="btn-next" onclick="validateStep4()">Review &amp; Submit →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 5: REVIEW -->
+  <div class="form-section" id="section5">
+    <div class="form-card">
+      <div class="form-card-title">
+        <div class="form-card-icon">📋</div>
+        <div><h3>Review Your Application</h3><p>Verify all details before final submission</p></div>
+      </div>
+      <div class="review-section">
+        <h4>🪪 Aadhaar &amp; Identity</h4>
+        <div class="review-grid">
+          <div class="review-row"><div class="rl">Aadhaar Number</div><div class="rv masked" id="rv_aadhaar">—</div></div>
+          <div class="review-row"><div class="rl">Verification Status</div><div class="rv" style="color:var(--success)">✅ Verified</div></div>
+        </div>
+      </div>
+      <div class="review-section">
+        <h4>👤 Personal Details</h4>
+        <div class="review-grid">
+          <div class="review-row"><div class="rl">Full Name</div><div class="rv" id="rv_name">—</div></div>
+          <div class="review-row"><div class="rl">Date of Birth</div><div class="rv" id="rv_dob">—</div></div>
+          <div class="review-row"><div class="rl">Age</div><div class="rv" id="rv_age">—</div></div>
+          <div class="review-row"><div class="rl">Gender</div><div class="rv" id="rv_gender">—</div></div>
+          <div class="review-row"><div class="rl">Category</div><div class="rv" id="rv_cat">—</div></div>
+          <div class="review-row"><div class="rl">Nationality</div><div class="rv" id="rv_nat">—</div></div>
+          <div class="review-row"><div class="rl">Marital Status</div><div class="rv" id="rv_marital">—</div></div>
+          <div class="review-row"><div class="rl">Occupation</div><div class="rv" id="rv_occ">—</div></div>
+        </div>
+      </div>
+      <div class="review-section">
+        <h4>🏡 Permanent Address</h4>
+        <div class="review-grid">
+          <div class="review-row"><div class="rl">House / Flat</div><div class="rv" id="rv_hno">—</div></div>
+          <div class="review-row"><div class="rl">Village / Town</div><div class="rv" id="rv_vill">—</div></div>
+          <div class="review-row"><div class="rl">Post Office</div><div class="rv" id="rv_po">—</div></div>
+          <div class="review-row"><div class="rl">Police Station</div><div class="rv" id="rv_ps">—</div></div>
+          <div class="review-row"><div class="rl">District</div><div class="rv" id="rv_dist">—</div></div>
+          <div class="review-row"><div class="rl">State &amp; PIN</div><div class="rv" id="rv_statepin">—</div></div>
+        </div>
+      </div>
+      <div class="review-section">
+        <h4>📱 Contact Information</h4>
+        <div class="review-grid">
+          <div class="review-row"><div class="rl">Mobile</div><div class="rv masked" id="rv_mob">—</div></div>
+          <div class="review-row"><div class="rl">Email</div><div class="rv" id="rv_email">—</div></div>
+          <div class="review-row"><div class="rl">Father's Name</div><div class="rv" id="rv_father">—</div></div>
+          <div class="review-row"><div class="rl">Mother's Name</div><div class="rv" id="rv_mother">—</div></div>
+        </div>
+      </div>
+      <div class="decl-box">
+        <strong>Declaration:</strong> I hereby declare that the information provided in this form is true, correct and complete to the best of my knowledge and belief. I understand that in the event of any information being found false or incorrect, I shall be liable for appropriate action as per the laws of India. I also consent to the DGSP platform using my Aadhaar-linked data for service delivery as per the Aadhaar Act, 2016.
+      </div>
+      <label class="check-item" style="margin-bottom:.75rem">
+        <input type="checkbox" id="decl1"/>
+        <span style="font-size:.83rem">I agree to the above declaration and the <a href="#" style="color:var(--gold)">Terms &amp; Conditions</a></span>
+      </label>
+      <label class="check-item">
+        <input type="checkbox" id="decl2"/>
+        <span style="font-size:.83rem">I consent to receive SMS/email alerts on my registered contact details</span>
+      </label>
+    </div>
+    <div class="form-actions">
+      <button class="btn-back" onclick="goStep(4)">← Contact</button>
+      <button class="btn-submit" onclick="submitForm()">
+        <span>🏛️ Submit Application</span><div class="spinner" id="submitSpinner"></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 6: SUCCESS -->
+  <div class="form-section" id="section6">
+    <div class="form-card">
+      <div class="success-wrap">
+        <div class="confetti-row">🎉 🇮🇳 🎊</div>
+        <div class="success-icon">✓</div>
+        <h2>Registration <span>Successful!</span></h2>
+        <p>Your application has been submitted to the Digital Government Service Platform. A confirmation SMS and email have been sent to your registered contacts.</p>
+        <div class="app-ref">
+          <div class="arl">Application Reference Number</div>
+          <div class="arv" id="refNumber">DGSP-2025-XXXXXXXX</div>
+        </div>
+        <p style="font-size:.82rem;margin-bottom:1.5rem">Save this number for tracking. Processing typically takes 3–5 working days.</p>
+        <div class="success-actions">
+          <button class="btn-dl" onclick="showToast('📄 Generating receipt…')">⬇ Download Receipt</button>
+          <button class="btn-dl" onclick="window.print()">🖨 Print</button>
+          <button class="btn-home" onclick="location.reload()">🏠 Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="floating-save" id="floatSave">
+  <div class="dot"></div> Draft auto-saved
+</div>
+
+<footer>
+  <div class="fl">DGSP — Digital Government Service Platform</div>
+  <div class="flinks">
+    <a href="#">Privacy Policy</a><a href="#">Terms of Use</a>
+    <a href="#">RTI</a><a href="#">Grievance</a><a href="#">Help</a>
+  </div>
+  <p>© 2025 Ministry of Electronics &amp; Information Technology, Government of India<br>
+  This is an official platform. All data is encrypted and secured as per IT Act 2000.</p>
+</footer>
+
+<script src="form.js"></script>
+</body>
+</html>
