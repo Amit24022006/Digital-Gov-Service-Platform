@@ -1,0 +1,12 @@
+{
+  "name": "govdesk",
+  "private": true,
+  "version": "1.0.0",
+  "description": "GovDesk — citizen services portal (client + API + MongoDB)",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "start": "npm run dev"
+  }
+}

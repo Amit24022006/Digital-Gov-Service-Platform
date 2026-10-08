@@ -1,0 +1,2247 @@
+{
+  "users": [
+    {
+      "id": "usr_admin_1",
+      "name": "National Portal Admin",
+      "email": "admin@govdesk.in",
+      "phone": "9811002233",
+      "state": "Delhi",
+      "role": "superadmin",
+      "preferences": [
+        "cat_farmer",
+        "cat_education",
+        "cat_health",
+        "cat_employment",
+        "cat_housing"
+      ],
+      "password_hash": "$2a$10$z33dwuiCckIx/9OHECVrA.d.nwtSQ/C/oezb4z81T65.rOAIlK0ee",
+      "created_at": "2026-09-09T16:35:34.444Z"
+    },
+    {
+      "id": "usr_citizen_1",
+      "name": "Rajesh Kumar Sharma",
+      "email": "citizen@govdesk.in",
+      "phone": "9876543210",
+      "state": "Delhi",
+      "role": "citizen",
+      "preferences": [
+        "cat_farmer",
+        "cat_education"
+      ],
+      "password_hash": "$2a$10$z33dwuiCckIx/9OHECVrA.hdS0RFyw//ZU365G8gpeEnPTlH83QyS",
+      "created_at": "2026-09-09T16:35:34.444Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat_farmer",
+      "slug": "farmer-agriculture",
+      "name": "Farmer & Agriculture",
+      "name_hi": "किसान और कृषि",
+      "icon": "Wheat",
+      "description": "Financial support, crop insurance, credit cards, and farming equipment subsidies.",
+      "description_hi": "वित्तीय सहायता, फसल बीमा, क्रेडिट कार्ड और कृषि उपकरण सब्सिडी।",
+      "color": "emerald"
+    },
+    {
+      "id": "cat_education",
+      "slug": "education-student",
+      "name": "Education & Student",
+      "name_hi": "शिक्षा और विद्यार्थी",
+      "icon": "GraduationCap",
+      "description": "Scholarships, college admissions, exam notifications, and student loan schemes.",
+      "description_hi": "छात्रवृत्ति, कॉलेज प्रवेश, परीक्षा अधिसूचनाएं और छात्र ऋण योजनाएं।",
+      "color": "blue"
+    },
+    {
+      "id": "cat_health",
+      "slug": "health-family",
+      "name": "Health & Family",
+      "name_hi": "स्वास्थ्य और परिवार",
+      "icon": "HeartPulse",
+      "description": "Cashless healthcare, health insurance, vaccination, and maternal health benefits.",
+      "description_hi": "कैशलेस स्वास्थ्य सेवा, स्वास्थ्य बीमा, टीकाकरण और मातृ स्वास्थ्य लाभ।",
+      "color": "rose"
+    },
+    {
+      "id": "cat_employment",
+      "slug": "employment-business",
+      "name": "Employment & Business",
+      "name_hi": "रोजगार और व्यापार",
+      "icon": "Briefcase",
+      "description": "Job portals, skill training, MSME loans, subsidies, and business registrations.",
+      "description_hi": "रोजगार पोर्टल, कौशल प्रशिक्षण, एमएसएमई ऋण, सब्सिडी और व्यवसाय पंजीकरण।",
+      "color": "amber"
+    },
+    {
+      "id": "cat_housing",
+      "slug": "housing-urban",
+      "name": "Housing & Urban",
+      "name_hi": "आवास और शहरी विकास",
+      "icon": "Home",
+      "description": "Affordable housing subsidies, ration card, property registration, and urban amenities.",
+      "description_hi": "किफायती आवास सब्सिडी, राशन कार्ड, संपत्ति पंजीकरण और नागरिक सुविधाएं।",
+      "color": "indigo"
+    },
+    {
+      "id": "cat_identity",
+      "slug": "identity-certificates",
+      "name": "Identity & Certificates",
+      "name_hi": "पहचान और प्रमाण पत्र",
+      "icon": "CreditCard",
+      "description": "Aadhaar, PAN card, voter ID, caste/income certificates, birth & death records.",
+      "description_hi": "आधार, पैन कार्ड, वोटर आईडी, जाति/आय प्रमाण पत्र, जन्म व मृत्यु रिकॉर्ड।",
+      "color": "cyan"
+    },
+    {
+      "id": "cat_transport",
+      "slug": "transport-vehicles",
+      "name": "Transport & Vehicles",
+      "name_hi": "परिवहन और वाहन",
+      "icon": "Car",
+      "description": "Driving licenses, vehicle RC registration, RTO services, and PUC certificates.",
+      "description_hi": "ड्राइविंग लाइसेंस, वाहन आरसी पंजीकरण, आरटीओ सेवाएं और पीयूसी प्रमाण पत्र।",
+      "color": "teal"
+    },
+    {
+      "id": "cat_welfare",
+      "slug": "social-welfare",
+      "name": "Social Welfare",
+      "name_hi": "सामाजिक कल्याण",
+      "icon": "Users",
+      "description": "Old age pension, disability certificates, widow assistance, and child protection.",
+      "description_hi": "वृद्धावस्था पेंशन, दिव्यांग प्रमाण पत्र, विधवा सहायता और बाल सुरक्षा योजनाएं।",
+      "color": "purple"
+    },
+    {
+      "id": "cat_legal",
+      "slug": "legal-citizen",
+      "name": "Legal & Citizen Services",
+      "name_hi": "कानूनी व नागरिक सेवाएं",
+      "icon": "Scale",
+      "description": "Police clearance, e-FIR, RTI online requests, free legal aid, and passport seva.",
+      "description_hi": "पुलिस सत्यापन, ई-एफआईआर, आरटीआई ऑनलाइन, मुफ्त कानूनी सहायता और पासपोर्ट सेवा।",
+      "color": "slate"
+    },
+    {
+      "id": "cat_others",
+      "slug": "others",
+      "name": "Others & Utilities",
+      "name_hi": "अन्य और नागरिक सुविधाएं",
+      "icon": "Layers",
+      "description": "Electricity connections, piped drinking water, municipal tax, and grievance redressal.",
+      "description_hi": "बिजली कनेक्शन, नल जल योजना, नगर पालिका कर और लोक शिकायत निवारण।",
+      "color": "violet"
+    }
+  ],
+  "services": [
+    {
+      "id": "srv_pmkisan",
+      "category_id": "cat_farmer",
+      "title": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "title_hi": "पीएम-किसान सम्मान निधि योजना",
+      "department": "Ministry of Agriculture & Farmers Welfare",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Direct income support of ₹6,000 per year transferred in 3 equal four-monthly installments into bank accounts.",
+      "benefits_hi": "बैंक खातों में 3 समान किस्तों में प्रति वर्ष ₹6,000 की प्रत्यक्ष आय सहायता।",
+      "processing_time": "15 to 30 Days",
+      "fee": "Free of cost",
+      "official_url": "https://pmkisan.gov.in",
+      "is_popular": true,
+      "description": "PM-KISAN is a central sector scheme to augment income of small and marginal landholding farmer families across the country for procurement of agricultural inputs.",
+      "description_hi": "पीएम-किसान योजना देश भर के छोटे और सीमांत किसान परिवारों को कृषि आदानों की खरीद के लिए आय सहायता प्रदान करती है।",
+      "tags": [
+        "farmer",
+        "agriculture",
+        "financial assistance",
+        "cash transfer",
+        "kisan"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 100,
+        "occupations": [
+          "farmer",
+          "agricultural_worker",
+          "landholder"
+        ],
+        "max_annual_income": 600000,
+        "exclusions": [
+          "Institutional landholders",
+          "Income tax payers",
+          "Constitutional post holders"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_1",
+          "name": "Aadhaar Card",
+          "mandatory": true,
+          "sample": "Aadhaar with mobile link"
+        },
+        {
+          "id": "doc_2",
+          "name": "Land Ownership Record (Khata/Khasra/ROR)",
+          "mandatory": true,
+          "sample": "Revenue record verified by Patwari"
+        },
+        {
+          "id": "doc_3",
+          "name": "Bank Passbook with IFSC",
+          "mandatory": true,
+          "sample": "Aadhaar-seeded bank account"
+        },
+        {
+          "id": "doc_4",
+          "name": "Active Mobile Number",
+          "mandatory": true,
+          "sample": "Linked with Aadhaar"
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Self Registration",
+          "description": "Visit the PM-KISAN official portal or nearest CSC Kendra and click 'New Farmer Registration'."
+        },
+        {
+          "step_no": 2,
+          "title": "Aadhaar Authentication",
+          "description": "Enter your 12-digit Aadhaar number and captcha, then enter the OTP received on registered mobile."
+        },
+        {
+          "step_no": 3,
+          "title": "Fill Land & Bank Details",
+          "description": "Provide state, district, sub-district, block, village, land survey/khata number, and IFSC bank details."
+        },
+        {
+          "step_no": 4,
+          "title": "Verification by State Nodal Officer",
+          "description": "Your application is routed to the district agriculture office / revenue officer for physical land record matching."
+        },
+        {
+          "step_no": 5,
+          "title": "Installment Credit",
+          "description": "Upon approval, your farmer registration number is generated and installment is credited via DBT."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is eKYC mandatory for existing farmers?",
+          "a": "Yes, OTP based eKYC is available on PMKISAN Portal or biometric eKYC at CSC centers."
+        },
+        {
+          "q": "Can non-landholding tenant farmers apply?",
+          "a": "No, currently the scheme requires registered cultivable land in the applicant's name."
+        }
+      ]
+    },
+    {
+      "id": "srv_pmfby",
+      "category_id": "cat_farmer",
+      "title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+      "title_hi": "प्रधानमंत्री फसल बीमा योजना",
+      "department": "Ministry of Agriculture & Farmers Welfare",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Comprehensive risk insurance covering post-harvest losses, localized natural calamities, drought, floods, and pest attacks at lowest premium (1.5% - 2%).",
+      "benefits_hi": "न्यूनतम प्रीमियम (1.5% - 2%) पर सूखा, बाढ़, कीट हमले और फसल कटाई के बाद के नुकसान के लिए व्यापक बीमा।",
+      "processing_time": "7 to 14 Days",
+      "fee": "1.5% to 2% subsidized premium",
+      "official_url": "https://pmfby.gov.in",
+      "is_popular": true,
+      "description": "PMFBY provides financial support to farmers suffering crop loss/damage arising out of unforeseen events, stabilizing farmer income and encouraging modern practices.",
+      "description_hi": "अप्रत्याशित प्राकृतिक आपदाओं से फसल नुकसान की भरपाई और किसानों की आय स्थिर करने के लिए बीमा योजना।",
+      "tags": [
+        "crop insurance",
+        "farmer",
+        "disaster",
+        "fasal bima"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 80,
+        "occupations": [
+          "farmer",
+          "tenant_farmer",
+          "sharecropper"
+        ],
+        "max_annual_income": 1500000
+      },
+      "documents": [
+        {
+          "id": "doc_pmfby_1",
+          "name": "Aadhaar Card",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pmfby_2",
+          "name": "Land Record / Sowing Certificate",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pmfby_3",
+          "name": "Bank Account Details",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pmfby_4",
+          "name": "Crop Sowing Declaration / Girdawari",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Check Cut-off Date",
+          "description": "Ensure crop insurance is purchased before the Kharif/Rabi cut-off date announced by state."
+        },
+        {
+          "step_no": 2,
+          "title": "Apply Online or Bank/CSC",
+          "description": "Fill crop acreage details and upload sowing certificate."
+        },
+        {
+          "step_no": 3,
+          "title": "Pay Farmer Share of Premium",
+          "description": "Pay 2% for Kharif, 1.5% for Rabi, or 5% for annual horticultural crops."
+        },
+        {
+          "step_no": 4,
+          "title": "Claim Settlement",
+          "description": "In case of damage, notify within 72 hours via the Crop Insurance App or toll-free number."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Within how many hours must loss be reported?",
+          "a": "Individual localized damage must be reported within 72 hours of the calamity."
+        }
+      ]
+    },
+    {
+      "id": "srv_kcc",
+      "category_id": "cat_farmer",
+      "title": "Kisan Credit Card (KCC) Scheme",
+      "title_hi": "किसान क्रेडिट कार्ड (केसीसी)",
+      "department": "Department of Financial Services / NABARD",
+      "scheme_type": "Central",
+      "mode": "Hybrid",
+      "state": "All India",
+      "benefits": "Concessional institutional credit up to ₹3 Lakhs at 4% effective interest rate with prompt repayment incentive for crop production, dairy, and fisheries.",
+      "benefits_hi": "फसल उत्पादन, डेयरी और मत्स्य पालन के लिए 4% प्रभावी ब्याज दर पर ₹3 लाख तक का रियायती ऋण।",
+      "processing_time": "14 Days",
+      "fee": "Zero processing fee for loans up to ₹3 Lakhs",
+      "official_url": "https://www.myscheme.gov.in/schemes/kcc",
+      "is_popular": false,
+      "description": "KCC meets the credit requirements for cultivation, post-harvest expenses, produce marketing loan, consumption requirements of farmer household, and working capital for maintenance of farm assets.",
+      "description_hi": "खेती की लागत, फसल कटाई के बाद के खर्च और पशुपालन हेतु रियायती ऋण योजना।",
+      "tags": [
+        "loan",
+        "credit card",
+        "kcc",
+        "farmer",
+        "low interest"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 75,
+        "occupations": [
+          "farmer",
+          "dairy_worker",
+          "fisherman"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_kcc_1",
+          "name": "Duly filled KCC Form",
+          "mandatory": true
+        },
+        {
+          "id": "doc_kcc_2",
+          "name": "Identity Proof (Aadhaar/Voter ID)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_kcc_3",
+          "name": "Land Tax Receipt / Revenue Record",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Form Submission",
+          "description": "Download standard one-page KCC application or apply at bank branch / CSC."
+        },
+        {
+          "step_no": 2,
+          "title": "Document Verification",
+          "description": "Bank verifies land records or animal husbandry proof."
+        },
+        {
+          "step_no": 3,
+          "title": "Card Issue",
+          "description": "Credit limit sanctioned and RuPay KCC card dispatched."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is collateral required up to 1.6 Lakhs?",
+          "a": "No, collateral free loan limit is ₹1.60 Lakhs, extendable to ₹3 Lakhs for tie-up arrangements."
+        }
+      ]
+    },
+    {
+      "id": "srv_nsp",
+      "category_id": "cat_education",
+      "title": "National Scholarship Portal (NSP - Pre & Post Matric)",
+      "title_hi": "राष्ट्रीय छात्रवृत्ति पोर्टल (प्री और पोस्ट मैट्रिक)",
+      "department": "Ministry of Electronics and Information Technology / Social Justice",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Direct bank transfer of school/college tuition fees, monthly maintenance allowance up to ₹25,000/year for meritorious and needy students.",
+      "benefits_hi": "मेधावी और जरूरतमंद छात्रों के लिए ₹25,000/वर्ष तक ट्यूशन फीस और रखरखाव भत्ता।",
+      "processing_time": "30 to 60 Days",
+      "fee": "Free",
+      "official_url": "https://scholarships.gov.in",
+      "is_popular": true,
+      "description": "Single window portal for Central and State government scholarships across primary to postgraduate education with automated biometric/e-KYC verification.",
+      "description_hi": "कक्षा 1 से उच्च शिक्षा तक विभिन्न छात्रवृत्तियों के लिए राष्ट्रीय एकीकृत पोर्टल।",
+      "tags": [
+        "scholarship",
+        "education",
+        "student",
+        "college",
+        "tuition"
+      ],
+      "eligibility_rules": {
+        "min_age": 6,
+        "max_age": 30,
+        "occupations": [
+          "student"
+        ],
+        "max_annual_income": 250000,
+        "student_types": [
+          "school",
+          "undergraduate",
+          "postgraduate"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_nsp_1",
+          "name": "Student Aadhaar / Birth Certificate",
+          "mandatory": true
+        },
+        {
+          "id": "doc_nsp_2",
+          "name": "Income Certificate from Tehsildar",
+          "mandatory": true
+        },
+        {
+          "id": "doc_nsp_3",
+          "name": "Previous Year Marksheet (>50% marks)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_nsp_4",
+          "name": "Fee Receipt / College Bonafide Certificate",
+          "mandatory": true
+        },
+        {
+          "id": "doc_nsp_5",
+          "name": "Bank Passbook in Student's Name",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "One-Time Registration (OTR)",
+          "description": "Register on NSP using student's Aadhaar and mobile number to receive permanent OTR ID."
+        },
+        {
+          "step_no": 2,
+          "title": "Select Eligible Scheme",
+          "description": "System auto-suggests scholarships matching student's category, state, and course."
+        },
+        {
+          "step_no": 3,
+          "title": "Institute Verification (Level 1)",
+          "description": "Nodal officer at school/college verifies admission bonafide and fee details."
+        },
+        {
+          "step_no": 4,
+          "title": "District & State Approval (Level 2)",
+          "description": "District welfare officer approves the merit roster."
+        },
+        {
+          "step_no": 5,
+          "title": "DBT Disbursement via PFMS",
+          "description": "Amount is credited directly into student's Aadhaar-seeded bank account."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can I apply for more than one scholarship on NSP?",
+          "a": "You can apply for multiple eligible schemes, but can only accept one central scholarship disbursement per academic year."
+        }
+      ]
+    },
+    {
+      "id": "srv_vidyalakshmi",
+      "category_id": "cat_education",
+      "title": "PM Vidya Lakshmi Education Loan Portal",
+      "title_hi": "पीएम विद्या लक्ष्मी शिक्षा ऋण पोर्टल",
+      "department": "Ministry of Education / Department of Financial Services",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Apply to multiple scheduled banks with a single common educational loan application form (CELAF); interest subsidy under CSIS for incomes under ₹4.5 LPA.",
+      "benefits_hi": "एकल आवेदन पत्र से कई बैंकों में शिक्षा ऋण के लिए आवेदन, ब्याज सब्सिडी का लाभ।",
+      "processing_time": "15 to 21 Days",
+      "fee": "Free submission",
+      "official_url": "https://www.vidyalakshmi.co.in",
+      "is_popular": false,
+      "description": "Vidya Lakshmi is a first-of-its-kind portal for students seeking education loan, providing information and application status across 40+ banks.",
+      "description_hi": "भारत और विदेश में उच्च शिक्षा हेतु रियायती दरों पर शिक्षा ऋण प्राप्त करने का पोर्टल।",
+      "tags": [
+        "student loan",
+        "education loan",
+        "vidyalakshmi",
+        "college fees"
+      ],
+      "eligibility_rules": {
+        "min_age": 17,
+        "max_age": 35,
+        "occupations": [
+          "student"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_vl_1",
+          "name": "Admission Letter & Fee Structure",
+          "mandatory": true
+        },
+        {
+          "id": "doc_vl_2",
+          "name": "10th, 12th & Degree Marksheets",
+          "mandatory": true
+        },
+        {
+          "id": "doc_vl_3",
+          "name": "Parent / Co-borrower Income Proof",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Register on Portal",
+          "description": "Create student login and fill Common Educational Loan Application Form (CELAF)."
+        },
+        {
+          "step_no": 2,
+          "title": "Search & Choose Schemes",
+          "description": "Compare interest rates and loan criteria across banks."
+        },
+        {
+          "step_no": 3,
+          "title": "Track In-Portal",
+          "description": "Monitor loan status and sanction letter directly in dashboard."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is collateral required for loans up to ₹7.5 Lakhs?",
+          "a": "Under the Credit Guarantee Fund Scheme, loans up to ₹7.5 Lakhs generally do not require third-party collateral."
+        }
+      ]
+    },
+    {
+      "id": "srv_ayushman",
+      "category_id": "cat_health",
+      "title": "Ayushman Bharat PM-JAY (Golden Card)",
+      "title_hi": "आयुष्मान भारत - प्रधानमंत्री जन आरोग्य योजना",
+      "department": "National Health Authority (NHA)",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Free secondary and tertiary hospitalization coverage up to ₹5,00,000 per family per year across 28,000+ empaneled public & private hospitals.",
+      "benefits_hi": "सूचीबद्ध अस्पतालों में प्रति वर्ष प्रति परिवार ₹5,00,000 तक मुफ्त इलाज व कैशलेस स्वास्थ्य कवरेज।",
+      "processing_time": "Instant to 24 Hours",
+      "fee": "Free",
+      "official_url": "https://beneficiary.nha.gov.in",
+      "is_popular": true,
+      "description": "World's largest government-funded healthcare assurance scheme providing cashless and paperless access to services for the beneficiary at the point of care.",
+      "description_hi": "गरीब और कमजोर परिवारों के लिए दुनिया की सबसे बड़ी स्वास्थ्य बीमा योजना।",
+      "tags": [
+        "ayushman",
+        "health card",
+        "hospital",
+        "cashless treatment",
+        "free surgery"
+      ],
+      "eligibility_rules": {
+        "min_age": 0,
+        "max_age": 100,
+        "max_annual_income": 300000,
+        "categories": [
+          "SECC Listed",
+          "BPL",
+          "Low Income",
+          "Senior 70+"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_ay_1",
+          "name": "Aadhaar Card of Family Members",
+          "mandatory": true
+        },
+        {
+          "id": "doc_ay_2",
+          "name": "Ration Card / Family ID",
+          "mandatory": true
+        },
+        {
+          "id": "doc_ay_3",
+          "name": "Active Mobile Number for OTP",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Check Family Name",
+          "description": "Visit beneficiary.nha.gov.in and search by Aadhaar or Ration Card number."
+        },
+        {
+          "step_no": 2,
+          "title": "Complete eKYC",
+          "description": "Submit Aadhaar OTP or visit nearest Ayushman Mitra at any district hospital."
+        },
+        {
+          "step_no": 3,
+          "title": "Download Ayushman Card",
+          "description": "Once approved, download the plastic Golden PVC card or digital PDF immediately."
+        },
+        {
+          "step_no": 4,
+          "title": "Avail Hospitalization",
+          "description": "Show card at the Ayushman Helpdesk in any empaneled hospital for 100% cashless admission."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is there any cap on family size or age?",
+          "a": "No, there is no restriction on family size, age, or gender."
+        },
+        {
+          "q": "Are pre-existing conditions covered?",
+          "a": "Yes, all pre-existing conditions are covered from day one of card activation."
+        }
+      ]
+    },
+    {
+      "id": "srv_abha",
+      "category_id": "cat_health",
+      "title": "ABHA Health Account & Digital Card",
+      "title_hi": "आभा (आयुष्मान भारत स्वास्थ्य खाता) डिजिटल कार्ड",
+      "department": "National Health Authority",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Unique 14-digit digital health ID to store and share medical records, lab reports, prescriptions securely across clinics and hospitals across India.",
+      "benefits_hi": "14-अंकों का डिजिटल स्वास्थ्य पहचान पत्र, मेडिकल रिकॉर्ड और पर्चियों को सुरक्षित सहेजने के लिए।",
+      "processing_time": "Instant (2 Minutes)",
+      "fee": "Free",
+      "official_url": "https://abha.abdm.gov.in",
+      "is_popular": false,
+      "description": "Ayushman Bharat Health Account (ABHA) is the foundation of India's digital health ecosystem, ensuring seamless consent-based health record sharing.",
+      "description_hi": "कागज रहित स्वास्थ्य रिकॉर्ड और डिजिटल ओपीडी टोकन हेतु भारत सरकार का डिजिटल स्वास्थ्य खाता।",
+      "tags": [
+        "abha",
+        "health id",
+        "digital health",
+        "medical records"
+      ],
+      "eligibility_rules": {
+        "min_age": 0,
+        "max_age": 100
+      },
+      "documents": [
+        {
+          "id": "doc_abha_1",
+          "name": "Aadhaar Card or Driving License",
+          "mandatory": true
+        },
+        {
+          "id": "doc_abha_2",
+          "name": "Mobile Phone with OTP capability",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Enter Aadhaar Number",
+          "description": "Type 12-digit Aadhaar on the ABHA portal or mobile app."
+        },
+        {
+          "step_no": 2,
+          "title": "Validate OTP",
+          "description": "Enter 6-digit OTP received from UIDAI."
+        },
+        {
+          "step_no": 3,
+          "title": "Download ABHA Card",
+          "description": "Receive instant 14-digit ABHA ID card with QR code."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can I delete or deactivate my ABHA number?",
+          "a": "Yes, users have full control to permanently delete or temporarily deactivate their ABHA."
+        }
+      ]
+    },
+    {
+      "id": "srv_pmegp",
+      "category_id": "cat_employment",
+      "title": "PMEGP (Prime Minister Employment Generation Programme)",
+      "title_hi": "प्रधानमंत्री रोजगार सृजन कार्यक्रम",
+      "department": "Ministry of MSME / KVIC",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Credit-linked government subsidy from 15% up to 35% on project costs up to ₹50 Lakhs for manufacturing and ₹20 Lakhs for service units.",
+      "benefits_hi": "विनिर्माण और सेवा इकाइयों के लिए परियोजना लागत पर 15% से 35% तक सरकारी सब्सिडी।",
+      "processing_time": "30 to 45 Days",
+      "fee": "Free",
+      "official_url": "https://www.kviconline.gov.in/pmegpeportal",
+      "is_popular": true,
+      "description": "Major credit-linked subsidy scheme aimed at generating self-employment micro-enterprises in non-farm sectors across rural and urban India.",
+      "description_hi": "नए सूक्ष्म उद्यमों की स्थापना और युवाओं को स्वरोजगार प्रदान करने के लिए प्रमुख योजना।",
+      "tags": [
+        "business loan",
+        "subsidy",
+        "startup",
+        "msme",
+        "pmegp",
+        "self employment"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 65,
+        "min_education": "8th Pass for projects > ₹10L",
+        "occupations": [
+          "unemployed",
+          "entrepreneur",
+          "artisan",
+          "self_employed"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_pmegp_1",
+          "name": "Project Report / Business Plan",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pmegp_2",
+          "name": "Aadhaar & PAN Card",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pmegp_3",
+          "name": "Special Category Certificate (SC/ST/OBC/Women/Ex-Servicemen)",
+          "mandatory": false
+        },
+        {
+          "id": "doc_pmegp_4",
+          "name": "Educational Qualification Certificate",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Online Application",
+          "description": "Select agency (KVIC/KVIB/DIC) and fill personal and enterprise details on PMEGP e-portal."
+        },
+        {
+          "step_no": 2,
+          "title": "Upload Project Proposal",
+          "description": "Submit detailed project cost including equipment, machinery, and working capital."
+        },
+        {
+          "step_no": 3,
+          "title": "District Level Task Force Committee (DLTFC)",
+          "description": "Application is scrutinized and forwarded to your selected financing bank branch."
+        },
+        {
+          "step_no": 4,
+          "title": "Bank Sanction & EDP Training",
+          "description": "Complete mandatory Entrepreneurship Development Programme (EDP) training."
+        },
+        {
+          "step_no": 5,
+          "title": "Margin Money Subsidy Lock-in",
+          "description": "Subsidy is credited into a separate TDR account for 3 years, then adjusted against loan principal."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is existing business eligible for expansion under initial PMEGP?",
+          "a": "Only new projects are eligible for first loan. 2nd financial assistance is available for upgrading existing performing units."
+        }
+      ]
+    },
+    {
+      "id": "srv_mudra",
+      "category_id": "cat_employment",
+      "title": "Pradhan Mantri Mudra Yojana (PMMY)",
+      "title_hi": "प्रधानमंत्री मुद्रा योजना",
+      "department": "Department of Financial Services",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Collateral-free business loans in 3 tiers: Shishu (up to ₹50,000), Kishore (₹50,000 to ₹5 Lakhs), and Tarun (up to ₹20 Lakhs) with Mudra Card.",
+      "benefits_hi": "शिशु, किशोर और तरुण श्रेणियों में ₹20 लाख तक का बिना गारंटी का व्यावसायिक ऋण।",
+      "processing_time": "7 to 14 Days",
+      "fee": "Nil for Shishu and nominal for others",
+      "official_url": "https://www.mudra.org.in",
+      "is_popular": true,
+      "description": "PMMY provides loans to non-corporate, non-farm small and micro enterprises to facilitate business growth and financial inclusion.",
+      "description_hi": "दुकानदारों, व्यापारियों और छोटे उद्योगों को बिना किसी गिरवी के आसान ऋण।",
+      "tags": [
+        "mudra loan",
+        "shishu",
+        "kishore",
+        "tarun",
+        "small business"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 65,
+        "occupations": [
+          "business_owner",
+          "shopkeeper",
+          "artisan",
+          "entrepreneur"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_mudra_1",
+          "name": "Proof of Identity & Address",
+          "mandatory": true
+        },
+        {
+          "id": "doc_mudra_2",
+          "name": "Business Registration / Proof of Enterprise",
+          "mandatory": true
+        },
+        {
+          "id": "doc_mudra_3",
+          "name": "Bank Statement (Last 6 months)",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Choose Loan Category",
+          "description": "Determine capital requirement: Shishu (≤50K), Kishore (≤5L), or Tarun (≤20L)."
+        },
+        {
+          "step_no": 2,
+          "title": "Apply via Udyamimitra",
+          "description": "Apply online at udyamimitra.in or submit directly to any public/private bank or NBFC."
+        },
+        {
+          "step_no": 3,
+          "title": "Disbursement",
+          "description": "Receive sanctioned loan amount and Mudra Debit Card for working capital."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can I use Mudra loan for buying personal car?",
+          "a": "No, Mudra loans are strictly meant for commercial business purposes and equipment."
+        }
+      ]
+    },
+    {
+      "id": "srv_udyam",
+      "category_id": "cat_employment",
+      "title": "Udyam MSME Registration Certificate",
+      "title_hi": "उद्यम एमएसएमई ऑनलाइन पंजीकरण",
+      "department": "Ministry of Micro, Small and Medium Enterprises",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Free, permanent digital registration certificate with lifetime validity; qualifies for priority sector lending, tariff subsidies, and govt tender fee exemptions.",
+      "benefits_hi": "सरकारी निविदाओं में छूट, कम ब्याज पर ऋण और एमएसएमई लाभों के लिए मुफ्त पंजीकरण।",
+      "processing_time": "Instant to 48 Hours",
+      "fee": "100% Free (Beware of fake private portals charging fees)",
+      "official_url": "https://udyamregistration.gov.in",
+      "is_popular": false,
+      "description": "The official zero-cost paperless portal for registering micro, small, and medium businesses in India based on Aadhaar and PAN.",
+      "description_hi": "सूक्ष्म, लघु और मध्यम उद्यमों के लिए भारत सरकार का आधिकारिक निःशुल्क पोर्टल।",
+      "tags": [
+        "msme",
+        "udyam",
+        "business certificate",
+        "gst",
+        "tender exemption"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 100,
+        "occupations": [
+          "business_owner",
+          "entrepreneur",
+          "freelancer"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_ud_1",
+          "name": "Aadhaar Card of Proprietor/Director",
+          "mandatory": true
+        },
+        {
+          "id": "doc_ud_2",
+          "name": "PAN Card of Business / Proprietor",
+          "mandatory": true
+        },
+        {
+          "id": "doc_ud_3",
+          "name": "Bank Account Details & IFSC",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Aadhaar Verification",
+          "description": "Enter 12-digit Aadhaar number and OTP on udyamregistration.gov.in."
+        },
+        {
+          "step_no": 2,
+          "title": "PAN Validation",
+          "description": "Provide PAN card details; system automatically fetches ITR/GST data from CBDT."
+        },
+        {
+          "step_no": 3,
+          "title": "Enterprise Information",
+          "description": "Select National Industry Classification (NIC) code and number of employees."
+        },
+        {
+          "step_no": 4,
+          "title": "Download Certificate",
+          "description": "Get official Udyam Certificate with QR code."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is GSTIN mandatory for all businesses?",
+          "a": "Exempted for entities not required to obtain GST registration under CGST Act."
+        }
+      ]
+    },
+    {
+      "id": "srv_pmay",
+      "category_id": "cat_housing",
+      "title": "Pradhan Mantri Awas Yojana (PMAY Urban & Gramin)",
+      "title_hi": "प्रधानमंत्री आवास योजना (शहरी व ग्रामीण)",
+      "department": "Ministry of Housing and Urban Affairs / MoRD",
+      "scheme_type": "Central",
+      "mode": "Hybrid",
+      "state": "All India",
+      "benefits": "Direct financial assistance of ₹1.20 Lakhs to ₹2.50 Lakhs for pucca house construction or interest subsidy up to ₹2.67 Lakhs on home loans.",
+      "benefits_hi": "पक्का मकान बनाने हेतु ₹2.5 लाख तक की आर्थिक सहायता और गृह ऋण पर ब्याज सब्सिडी।",
+      "processing_time": "45 to 90 Days",
+      "fee": "Free",
+      "official_url": "https://pmaymis.gov.in",
+      "is_popular": true,
+      "description": "Flagship mission of Govt of India addressing the housing shortage among EWS/LIG and MIG categories by ensuring a pucca house to all eligible urban and rural families.",
+      "description_hi": "सभी बेघर और कच्चे मकानों में रहने वाले परिवारों को पक्का मकान उपलब्ध कराने का राष्ट्रीय मिशन।",
+      "tags": [
+        "housing",
+        "pmay",
+        "pucca house",
+        "home loan subsidy",
+        "awas"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 80,
+        "max_annual_income": 600000,
+        "occupations": [
+          "daily_wager",
+          "worker",
+          "farmer",
+          "low_income_earner",
+          "self_employed"
+        ],
+        "exclusions": [
+          "Families who already own a pucca house anywhere in India"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_pmay_1",
+          "name": "Aadhaar Card of all family members",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pmay_2",
+          "name": "Income Certificate / BPL Certificate",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pmay_3",
+          "name": "Land ownership / allotment letter",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pmay_4",
+          "name": "Bank Passbook with photo",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Eligibility Assessment",
+          "description": "Verify that no family member owns a pucca house in India."
+        },
+        {
+          "step_no": 2,
+          "title": "Online Registration / Gram Sabha",
+          "description": "Apply via CSC / ULB urban municipality or rural Awas+ app geo-tagging."
+        },
+        {
+          "step_no": 3,
+          "title": "Geo-tagging of Site",
+          "description": "Government surveyor visits and photographs existing kutcha home."
+        },
+        {
+          "step_no": 4,
+          "title": "Stage-wise Release of Installments",
+          "description": "Funds released in 3-4 stages: Foundation, Lintel, Roof, and Completion."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is female ownership mandatory in PMAY?",
+          "a": "Yes, houses under PMAY-U are preferably registered in the name of the female head or joint ownership."
+        }
+      ]
+    },
+    {
+      "id": "srv_ration",
+      "category_id": "cat_housing",
+      "title": "NFSA Digital Ration Card & One Nation One Ration (ONORC)",
+      "title_hi": "डिजिटल राशन कार्ड और एक राष्ट्र एक राशन कार्ड",
+      "department": "Department of Food & Public Distribution",
+      "scheme_type": "State",
+      "mode": "Online",
+      "state": "All States",
+      "benefits": "Monthly subsidized/free food grains (Rice, Wheat, Coarse grains) across any fair price shop in India under ONORC portability.",
+      "benefits_hi": "देश की किसी भी राशन दुकान से मुफ्त या रियायती अनाज प्राप्त करने की पोर्टेबल सुविधा।",
+      "processing_time": "15 to 30 Days",
+      "fee": "₹20 to ₹50 nominal state fee",
+      "official_url": "https://nfsa.gov.in",
+      "is_popular": true,
+      "description": "Issue of new priority household (PHH) or Antyodaya Anna Yojana (AAY) digital ration cards with biometric e-PoS lifting across states.",
+      "description_hi": "राशन कार्ड के लिए नया आवेदन, सदस्य जोड़ना और देश भर में कहीं भी राशन उठाना।",
+      "tags": [
+        "ration card",
+        "food subsidy",
+        "onorc",
+        "grain",
+        "nfsa"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 100,
+        "max_annual_income": 200000
+      },
+      "documents": [
+        {
+          "id": "doc_rc_1",
+          "name": "Aadhaar Card of Family Head (Female Head)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_rc_2",
+          "name": "Electricity / Water Utility Bill",
+          "mandatory": true
+        },
+        {
+          "id": "doc_rc_3",
+          "name": "Income Certificate issued by Revenue Authority",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Select State Portal",
+          "description": "Navigate to State Food & Civil Supplies online portal."
+        },
+        {
+          "step_no": 2,
+          "title": "Enter Family Members",
+          "description": "Add details and Aadhaar numbers of all family dependents."
+        },
+        {
+          "step_no": 3,
+          "title": "Field Verification",
+          "description": "Supply Inspector conducts field verification of economic criteria."
+        },
+        {
+          "step_no": 4,
+          "title": "Collect Digital Ration Card",
+          "description": "Download e-Ration card or collect physical card from local FPS."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can a migrant worker collect rations in another state?",
+          "a": "Yes, under ONORC, any beneficiary can authenticate via biometric e-PoS in any state."
+        }
+      ]
+    },
+    {
+      "id": "srv_aadhaar",
+      "category_id": "cat_identity",
+      "title": "Aadhaar Enrolment & Document Update",
+      "title_hi": "आधार नामांकन एवं दस्तावेज नवीनीकरण",
+      "department": "Unique Identification Authority of India (UIDAI)",
+      "scheme_type": "Central",
+      "mode": "Hybrid",
+      "state": "All India",
+      "benefits": "Universal 12-digit verifiable biometric identity proof for all Indian residents, essential for banking, SIM, pensions, and passports.",
+      "benefits_hi": "सभी भारतीय नागरिकों के लिए 12 अंकों का डिजिटल पहचान पत्र और बायोमेट्रिक रिकॉर्ड।",
+      "processing_time": "5 to 15 Days",
+      "fee": "Free for first time; ₹50 for demographic updates",
+      "official_url": "https://myaadhaar.uidai.gov.in",
+      "is_popular": true,
+      "description": "Service for new Aadhaar enrolment, free document revalidation (POI/POA), PVC card order, and mobile/address change.",
+      "description_hi": "नया आधार कार्ड, नाम/पता/मोबाइल नंबर अपडेट और पीवीसी आधार कार्ड ऑनलाइन मंगाना।",
+      "tags": [
+        "aadhaar",
+        "uidai",
+        "identity",
+        "address update",
+        "pvc card"
+      ],
+      "eligibility_rules": {
+        "min_age": 0,
+        "max_age": 100
+      },
+      "documents": [
+        {
+          "id": "doc_aadhaar_1",
+          "name": "Proof of Identity (Passport/PAN/Voter ID)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_aadhaar_2",
+          "name": "Proof of Address (Electricity bill/Domicile/Passbook)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_aadhaar_3",
+          "name": "Proof of Date of Birth (Birth certificate/Marksheet)",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Book Appointment or Use myAadhaar",
+          "description": "Book slot at Aadhaar Seva Kendra for biometric updates or login with OTP for address update."
+        },
+        {
+          "step_no": 2,
+          "title": "Biometric & Demographic Capture",
+          "description": "Fingerprints, iris scan, and photo taken at center."
+        },
+        {
+          "step_no": 3,
+          "title": "URN Tracking",
+          "description": "Track application with 14-digit Enrolment ID / Update Request Number (URN)."
+        },
+        {
+          "step_no": 4,
+          "title": "Download e-Aadhaar",
+          "description": "Download password-protected PDF digitally signed by UIDAI."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is mandatory biometric update required for children at ages 5 and 15?",
+          "a": "Yes, mandatory biometric update (MBU) for children at age 5 and 15 is completely free."
+        }
+      ]
+    },
+    {
+      "id": "srv_pan",
+      "category_id": "cat_identity",
+      "title": "Instant e-PAN & New PAN Card Application",
+      "title_hi": "इंस्टेंट ई-पैन एवं नया पैन कार्ड आवेदन",
+      "department": "Income Tax Department / NSDL / UTIITSL",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "10-digit alphanumeric tax identification number allotted instantly in 10 minutes (paperless via Aadhaar eKYC) or physical card dispatched to home address.",
+      "benefits_hi": "आयकर और वित्तीय लेन-देन के लिए 10 मिनट में डिजिटल ई-पैन कार्ड प्राप्त करें।",
+      "processing_time": "10 Minutes for e-PAN; 7 Days for Physical Card",
+      "fee": "Free for instant e-PAN; ₹107 for physical card dispatch",
+      "official_url": "https://www.incometax.gov.in",
+      "is_popular": true,
+      "description": "Permanent Account Number is mandatory for opening bank accounts, high-value transactions, filing income tax returns, and business incorporation.",
+      "description_hi": "बैंक खाता खोलने और वित्तीय लेन-देन के लिए आवश्यक स्थाई खाता संख्या (PAN)।",
+      "tags": [
+        "pan card",
+        "tax",
+        "income tax",
+        "e-pan",
+        "nsdl"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 100
+      },
+      "documents": [
+        {
+          "id": "doc_pan_1",
+          "name": "Aadhaar Card with linked active mobile",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pan_2",
+          "name": "Passport size photograph (for manual NSDL route)",
+          "mandatory": false
+        },
+        {
+          "id": "doc_pan_3",
+          "name": "Digital Signature / Scanned signature",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Instant e-PAN Option",
+          "description": "Go to Income Tax e-filing portal and click 'Instant e-PAN' -> 'Get New e-PAN'."
+        },
+        {
+          "step_no": 2,
+          "title": "Enter Aadhaar & Validate OTP",
+          "description": "UIDAI details will be displayed for confirmation."
+        },
+        {
+          "step_no": 3,
+          "title": "Instant Generation",
+          "description": "Download digitally signed PDF PAN card within minutes."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is e-PAN as valid as physical PAN card?",
+          "a": "Yes, digitally signed e-PAN is completely valid under Rule 114 of Income Tax Rules."
+        }
+      ]
+    },
+    {
+      "id": "srv_certificates",
+      "category_id": "cat_identity",
+      "title": "Caste, Income & Domicile Certificates",
+      "title_hi": "जाति, आय एवं निवास प्रमाण पत्र",
+      "department": "State Revenue & District Administration",
+      "scheme_type": "State",
+      "mode": "Online",
+      "state": "All States",
+      "benefits": "Officially certified certificates required for college quota admissions, fee remissions, government jobs reservation, and welfare schemes.",
+      "benefits_hi": "सरकारी नौकरियों, छात्रवृत्ति और प्रवेश में आरक्षण और छूट हेतु आवश्यक सरकारी प्रमाण पत्र।",
+      "processing_time": "7 to 15 Days",
+      "fee": "₹15 to ₹50 state service charge",
+      "official_url": "https://serviceonline.gov.in",
+      "is_popular": true,
+      "description": "Online application via ServicePlus or state e-District portals for SC/ST/OBC/EWS caste certificates, family annual income certificates, and resident domicile.",
+      "description_hi": "राज्य ई-डिस्ट्रिक्ट पोर्टल के माध्यम से आय, जाति और मूल निवास प्रमाण पत्र बनवाएं।",
+      "tags": [
+        "caste certificate",
+        "income certificate",
+        "domicile",
+        "niwas praman patra"
+      ],
+      "eligibility_rules": {
+        "min_age": 0,
+        "max_age": 100
+      },
+      "documents": [
+        {
+          "id": "doc_cert_1",
+          "name": "Aadhaar Card",
+          "mandatory": true
+        },
+        {
+          "id": "doc_cert_2",
+          "name": "Self-declaration affidavit",
+          "mandatory": true
+        },
+        {
+          "id": "doc_cert_3",
+          "name": "Father's Caste Proof / Land Record (for caste)",
+          "mandatory": false
+        },
+        {
+          "id": "doc_cert_4",
+          "name": "Salary Slip / Patwari Income Report (for income)",
+          "mandatory": false
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Register on State e-District Portal",
+          "description": "Create citizen account on your state's digital seva portal."
+        },
+        {
+          "step_no": 2,
+          "title": "Upload Scanned Supporting Docs",
+          "description": "Attach photo, affidavit, and revenue documents."
+        },
+        {
+          "step_no": 3,
+          "title": "Tehsildar Inquiry & Verification",
+          "description": "Revenue inspector / Lekhpal verifies facts and submits recommendation."
+        },
+        {
+          "step_no": 4,
+          "title": "Download Barcoded Certificate",
+          "description": "Download digitally signed certificate with verification QR code."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What is the validity of an Income Certificate?",
+          "a": "Most state income certificates are valid for 1 to 3 financial years from the date of issue."
+        }
+      ]
+    },
+    {
+      "id": "srv_driving_license",
+      "category_id": "cat_transport",
+      "title": "Sarathi Driving License (Learner & Permanent DL)",
+      "title_hi": "सारथी ड्राइविंग लाइसेंस (लर्नर एवं पक्का डीएल)",
+      "department": "Ministry of Road Transport and Highways (MoRTH)",
+      "scheme_type": "Central",
+      "mode": "Hybrid",
+      "state": "All India",
+      "benefits": "Legal authorization to drive two-wheelers, cars, and transport vehicles on public roads across India; smart card driving license.",
+      "benefits_hi": "देश भर में वैध ड्राइविंग लाइसेंस, ऑनलाइन लर्नर टेस्ट और स्मार्ट कार्ड लाइसेंस।",
+      "processing_time": "Same day for LL; 15 Days for Permanent DL",
+      "fee": "₹200 for Learner License; ₹700 for Permanent DL test & card",
+      "official_url": "https://sarathi.parivahan.gov.in",
+      "is_popular": true,
+      "description": "National Parivahan Sarathi platform for faceless contact-less Learner License test from home and appointment booking for permanent driving driving track test.",
+      "description_hi": "घर बैठे ऑनलाइन लर्नर लाइसेंस टेस्ट दें और आरटीओ में स्थायी लाइसेंस का स्लॉट बुक करें।",
+      "tags": [
+        "driving license",
+        "dl",
+        "learner license",
+        "parivahan",
+        "rto"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 75
+      },
+      "documents": [
+        {
+          "id": "doc_dl_1",
+          "name": "Proof of Age (Birth cert / 10th marksheet / PAN)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_dl_2",
+          "name": "Proof of Address (Aadhaar / Passport / Voter ID)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_dl_3",
+          "name": "Form 1 (Physical Fitness Self-Declaration)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_dl_4",
+          "name": "Passport sized photograph and signature",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Apply for Learner License (LL)",
+          "description": "Fill Form 2 online on Parivahan Sarathi with Aadhaar authentication."
+        },
+        {
+          "step_no": 2,
+          "title": "Take Online Audio-Visual Test",
+          "description": "Take the 15-question road signs and traffic safety quiz from home web camera."
+        },
+        {
+          "step_no": 3,
+          "title": "Download LL",
+          "description": "Instant generation of Learner's License valid for 6 months."
+        },
+        {
+          "step_no": 4,
+          "title": "Slot Booking for Permanent DL",
+          "description": "After 30 days, book driving track test slot at your local RTO."
+        },
+        {
+          "step_no": 5,
+          "title": "Pass Track Test & Receive Smart Card",
+          "description": "Clear driving test; permanent card delivered via speed post."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How many days after Learner License can I apply for Permanent DL?",
+          "a": "You can apply after 30 days and before 180 days (6 months) from LL issue."
+        }
+      ]
+    },
+    {
+      "id": "srv_vahan",
+      "category_id": "cat_transport",
+      "title": "Vahan Vehicle RC Transfer & Renewal",
+      "title_hi": "वाहन आरसी ट्रांसफर एवं नवीनीकरण",
+      "department": "Ministry of Road Transport and Highways",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Online ownership transfer (Form 29/30), hypothecation termination, duplicate RC, and fitness certificate renewal without visiting RTO in many states.",
+      "benefits_hi": "गाड़ी की आरसी का नाम बदलना, लोन हटाना और डुप्लीकेट आरसी ऑनलाइन प्राप्त करना।",
+      "processing_time": "10 to 20 Days",
+      "fee": "₹300 to ₹1,000 depending on vehicle class",
+      "official_url": "https://vahan.parivahan.gov.in",
+      "is_popular": false,
+      "description": "Citizen services for motor vehicle registration, change of address, and NOC issuance for inter-state vehicle movement.",
+      "description_hi": "गाड़ियों की आरसी ट्रांसफर, फिटनेस सर्टिफिकेट और एनओसी के लिए ऑनलाइन पोर्टल।",
+      "tags": [
+        "vahan",
+        "vehicle rc",
+        "ownership transfer",
+        "rto",
+        "noc"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 100
+      },
+      "documents": [
+        {
+          "id": "doc_vh_1",
+          "name": "Original Registration Certificate (RC)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_vh_2",
+          "name": "Valid Insurance Certificate",
+          "mandatory": true
+        },
+        {
+          "id": "doc_vh_3",
+          "name": "Valid PUC (Pollution Certificate)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_vh_4",
+          "name": "Form 29 & Form 30 signed by buyer & seller",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Enter Vehicle Number",
+          "description": "Login to Parivahan Vahan portal and input Chassis number."
+        },
+        {
+          "step_no": 2,
+          "title": "Select Service",
+          "description": "Choose 'Transfer of Ownership' or 'Hypothecation Removal'."
+        },
+        {
+          "step_no": 3,
+          "title": "Aadhaar e-Sign",
+          "description": "Buyer and seller verify via Aadhaar OTP."
+        },
+        {
+          "step_no": 4,
+          "title": "Fee Payment & Dispatch",
+          "description": "Pay road fee; digital RC updated on mParivahan app."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is physical inspection required for RC transfer?",
+          "a": "In most Aadhaar-authenticated cases within the same RTO jurisdiction, physical inspection is not required."
+        }
+      ]
+    },
+    {
+      "id": "srv_pension",
+      "category_id": "cat_welfare",
+      "title": "National Social Assistance Old Age & Widow Pension (NSAP)",
+      "title_hi": "राष्ट्रीय सामाजिक सहायता वृद्धावस्था एवं विधवा पेंशन",
+      "department": "Ministry of Rural Development",
+      "scheme_type": "Central",
+      "mode": "Hybrid",
+      "state": "All India",
+      "benefits": "Monthly pension of ₹1,000 to ₹3,000 (central + state top-up) credited directly into the senior citizen or widow's bank account every month.",
+      "benefits_hi": "वरिष्ठ नागरिकों और विधवाओं के लिए प्रति माह ₹1,000 से ₹3,000 तक की मासिक पेंशन।",
+      "processing_time": "30 to 45 Days",
+      "fee": "Free",
+      "official_url": "https://nsap.nic.in",
+      "is_popular": true,
+      "description": "Social security safety net providing financial assistance to destitute senior citizens aged 60+, widows aged 40+, and persons with severe disabilities.",
+      "description_hi": "वृद्धजनों, विधवा महिलाओं और दिव्यांगजनों के लिए सम्मानजनक मासिक आर्थिक सहारा।",
+      "tags": [
+        "pension",
+        "old age pension",
+        "widow pension",
+        "nsap",
+        "social security"
+      ],
+      "eligibility_rules": {
+        "min_age": 60,
+        "max_age": 120,
+        "max_annual_income": 100000,
+        "categories": [
+          "BPL",
+          "Destitute",
+          "Senior Citizen"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_pen_1",
+          "name": "Aadhaar Card & Age Proof",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pen_2",
+          "name": "BPL Ration Card / Income Certificate",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pen_3",
+          "name": "Death Certificate of Husband (for widow pension)",
+          "mandatory": false
+        },
+        {
+          "id": "doc_pen_4",
+          "name": "Single Account Bank Passbook",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Application Form",
+          "description": "Submit online on state social welfare portal or at Block Development Office / Tehsildar."
+        },
+        {
+          "step_no": 2,
+          "title": "Social Audit Verification",
+          "description": "Gram Panchayat or Ward member validates living condition."
+        },
+        {
+          "step_no": 3,
+          "title": "Sanction Order",
+          "description": "District Welfare Officer issues pension sanction PPO number."
+        },
+        {
+          "step_no": 4,
+          "title": "Monthly DBT Credit",
+          "description": "Monthly pension disbursed through PFMS directly into bank account."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is annual life certificate (Jeevan Pramaan) required?",
+          "a": "Yes, pensioners must submit digital life certificate once a year using face or biometric auth."
+        }
+      ]
+    },
+    {
+      "id": "srv_udid",
+      "category_id": "cat_welfare",
+      "title": "Unique Disability ID (UDID) Card & Swavlamban",
+      "title_hi": "विशिष्ट दिव्यांगता पहचान पत्र (स्वावलंबन यूडीआईडी)",
+      "department": "Department of Empowerment of Persons with Disabilities",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Single pan-India smart card providing disability concessions in railways, bus travel, education reservation, assistive devices, and pensions.",
+      "benefits_hi": "पूरे भारत में मान्य स्मार्ट कार्ड, रेलवे/बस छूट, उपकरण और आरक्षण के लिए एक पहचान।",
+      "processing_time": "20 to 30 Days",
+      "fee": "Free",
+      "official_url": "https://www.swavlambancard.gov.in",
+      "is_popular": false,
+      "description": "UDID creates a national database for persons with disabilities, issuing a smart card with QR code verified by medical medical boards.",
+      "description_hi": "दिव्यांगजनों के लिए राष्ट्रीय डिजिटल कार्ड और मेडिकल बोर्ड असेसमेंट।",
+      "tags": [
+        "disability card",
+        "udid",
+        "swavlamban",
+        "divyang",
+        "railway concession"
+      ],
+      "eligibility_rules": {
+        "min_age": 0,
+        "max_age": 100,
+        "disability_percentage": "40% or more"
+      },
+      "documents": [
+        {
+          "id": "doc_udid_1",
+          "name": "Recent Color Passport Photograph",
+          "mandatory": true
+        },
+        {
+          "id": "doc_udid_2",
+          "name": "Aadhaar Card / ID Proof",
+          "mandatory": true
+        },
+        {
+          "id": "doc_udid_3",
+          "name": "Disability Certificate issued by Medical Authority (if already available)",
+          "mandatory": false
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Online Registration",
+          "description": "Apply on swavlambancard.gov.in with personal and disability type details."
+        },
+        {
+          "step_no": 2,
+          "title": "Hospital Appointment",
+          "description": "Slot scheduled at district civil hospital for medical assessment."
+        },
+        {
+          "step_no": 3,
+          "title": "Medical Board Evaluation",
+          "description": "Doctors calculate disability percentage and sign off digitally."
+        },
+        {
+          "step_no": 4,
+          "title": "Plastic Card Dispatch",
+          "description": "Card printed and posted to residential address."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is UDID accepted across all states?",
+          "a": "Yes, UDID is recognized uniformly across all Indian states and central departments."
+        }
+      ]
+    },
+    {
+      "id": "srv_passport",
+      "category_id": "cat_legal",
+      "title": "Passport Seva (Fresh / Re-issue Normal & Tatkaal)",
+      "title_hi": "पासपोर्ट सेवा (नया एवं नवीनीकरण)",
+      "department": "Consular, Passport and Visa Division (CPV), Ministry of External Affairs",
+      "scheme_type": "Central",
+      "mode": "Hybrid",
+      "state": "All India",
+      "benefits": "Official government travel document certifying international citizenship and identity; eligible for global travel and visa applications.",
+      "benefits_hi": "अंतरराष्ट्रीय यात्रा और पहचान के लिए भारत सरकार का आधिकारिक पासपोर्ट।",
+      "processing_time": "Normal: 15-20 Days; Tatkaal: 1-3 Days",
+      "fee": "₹1,500 for standard 36-page adult passport; ₹3,500 for Tatkaal",
+      "official_url": "https://www.passportindia.gov.in",
+      "is_popular": true,
+      "description": "Passport Seva facilitates simple, transparent, and streamlined delivery of passport services through nationwide Passport Seva Kendras (PSK) and Post Office PSKs.",
+      "description_hi": "पासपोर्ट सेवा केंद्र (पीएसके) के जरिए नया पासपोर्ट और नवीनीकरण की पारदर्शी व्यवस्था।",
+      "tags": [
+        "passport",
+        "travel document",
+        "visa",
+        "tatkaal",
+        "psk"
+      ],
+      "eligibility_rules": {
+        "min_age": 0,
+        "max_age": 100,
+        "nationality": "Indian Citizen"
+      },
+      "documents": [
+        {
+          "id": "doc_pass_1",
+          "name": "Proof of Date of Birth (Birth cert/Aadhaar/School leaving)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pass_2",
+          "name": "Proof of Present Address (Aadhaar/Bank Passbook/Utility Bill)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_pass_3",
+          "name": "Non-ECR proof (10th standard certificate or higher)",
+          "mandatory": false
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Register on Passport Seva Online",
+          "description": "Create user account on passportindia.gov.in."
+        },
+        {
+          "step_no": 2,
+          "title": "Fill Application Form",
+          "description": "Choose Fresh or Re-issue and select 36 or 60 pages."
+        },
+        {
+          "step_no": 3,
+          "title": "Pay Online & Book PSK Slot",
+          "description": "Schedule appointment at nearest PSK or Post Office PSK (POPSK)."
+        },
+        {
+          "step_no": 4,
+          "title": "Visit PSK for Biometrics",
+          "description": "Counters A (Bio), B (Verification), and C (Granting) process your file."
+        },
+        {
+          "step_no": 5,
+          "title": "Police Verification & Speed Post Delivery",
+          "description": "Local police station completes verification; passport delivered to doorstep."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is police verification needed before passport dispatch in Tatkaal?",
+          "a": "Under Tatkaal, passport is dispatched on post-police verification basis."
+        }
+      ]
+    },
+    {
+      "id": "srv_rti",
+      "category_id": "cat_legal",
+      "title": "RTI Online (Right to Information Request)",
+      "title_hi": "आरटीआई ऑनलाइन (सूचना का अधिकार)",
+      "department": "Department of Personnel and Training (DoPT)",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Enables any citizen to seek information, inspection of records, and certified copies from central government ministries, PSUs, and departments.",
+      "benefits_hi": "सरकारी विभागों से सूचना, रिकॉर्ड और कार्य की जांच प्राप्त करने का नागरिक अधिकार।",
+      "processing_time": "Mandatory 30 Days (48 Hours for Life & Liberty)",
+      "fee": "₹10 per application (Free for BPL cardholders)",
+      "official_url": "https://rtionline.gov.in",
+      "is_popular": false,
+      "description": "RTI Online is a web portal to file RTI applications and first appeals online for all Central Ministries and public authorities.",
+      "description_hi": "सूचना का अधिकार अधिनियम के तहत ऑनलाइन आवेदन और प्रथम अपील दायर करें।",
+      "tags": [
+        "rti",
+        "information",
+        "transparency",
+        "complaint",
+        "dopt"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 100,
+        "nationality": "Indian Citizen"
+      },
+      "documents": [
+        {
+          "id": "doc_rti_1",
+          "name": "Clear text query (under 3,000 characters)",
+          "mandatory": true
+        },
+        {
+          "id": "doc_rti_2",
+          "name": "BPL Certificate (if claiming fee exemption)",
+          "mandatory": false
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Select Ministry/Department",
+          "description": "Choose the target Public Authority from the dropdown menu."
+        },
+        {
+          "step_no": 2,
+          "title": "Draft Specific Questions",
+          "description": "Enter precise questions seeking verifiable records and facts."
+        },
+        {
+          "step_no": 3,
+          "title": "Pay ₹10 Fee",
+          "description": "Pay online via UPI, debit card, or net banking."
+        },
+        {
+          "step_no": 4,
+          "title": "Receive CPIO Response",
+          "description": "Central Public Information Officer (CPIO) replies within statutory 30-day window."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What can I do if CPIO doesn't reply in 30 days?",
+          "a": "You can file an online First Appeal free of charge to the designated First Appellate Authority (FAA)."
+        }
+      ]
+    },
+    {
+      "id": "srv_water_jal",
+      "category_id": "cat_others",
+      "title": "Jal Jeevan Mission - Tap Water Connection",
+      "title_hi": "जल जीवन मिशन - हर घर नल से जल",
+      "department": "Department of Drinking Water and Sanitation, Ministry of Jal Shakti",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Functional Household Tap Connection (FHTC) delivering potable drinking water of prescribed quality (55 liters per person per day) to every rural household.",
+      "benefits_hi": "हर ग्रामीण घर में 55 लीटर प्रति व्यक्ति प्रतिदिन स्वच्छ पेयजल का नल कनेक्शन।",
+      "processing_time": "15 to 30 Days",
+      "fee": "Subsidized / Nominal local gram panchayat charge",
+      "official_url": "https://ejalshakti.gov.in/jjmreport",
+      "is_popular": false,
+      "description": "JJM aims to provide piped clean water supply to all rural homes through community-led water and sanitation committees (VWSC).",
+      "description_hi": "ग्रामीण परिवारों को स्वच्छ पेयजल पाइपलाइन से जोड़ने की राष्ट्रीय योजना।",
+      "tags": [
+        "water",
+        "jal jeevan",
+        "tap connection",
+        "piped water",
+        "utilities"
+      ],
+      "eligibility_rules": {
+        "min_age": 18,
+        "max_age": 100,
+        "occupations": [
+          "household_head",
+          "resident"
+        ]
+      },
+      "documents": [
+        {
+          "id": "doc_jjm_1",
+          "name": "Aadhaar Card",
+          "mandatory": true
+        },
+        {
+          "id": "doc_jjm_2",
+          "name": "Proof of residence / Village house number",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Contact Gram Panchayat Water Committee",
+          "description": "Register requirement with Village Water and Sanitation Committee (VWSC)."
+        },
+        {
+          "step_no": 2,
+          "title": "Site Feasibility Inspection",
+          "description": "Technical engineer surveys pipe branch connection."
+        },
+        {
+          "step_no": 3,
+          "title": "Meter / Tap Installation",
+          "description": "Pipeline laid and tap installed with quality test certificate."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is the water quality tested periodically?",
+          "a": "Yes, field testing kits (FTK) are provided to 5 women in every village to test water for chemical/bacteriological contamination."
+        }
+      ]
+    },
+    {
+      "id": "srv_cpgrams",
+      "category_id": "cat_others",
+      "title": "CPGRAMS Public Grievance Redressal",
+      "title_hi": "सीपीजीआरएएमएस - केंद्रीय लोक शिकायत निवारण प्रणाली",
+      "department": "Department of Administrative Reforms and Public Grievances (DARPG)",
+      "scheme_type": "Central",
+      "mode": "Online",
+      "state": "All India",
+      "benefits": "Direct escalation of complaints against central/state government departments with time-bound resolution target of 30 days and senior officer monitoring.",
+      "benefits_hi": "सरकारी विभागों के खिलाफ सीधी शिकायत दर्ज करें और 30 दिनों में समयबद्ध समाधान पाएं।",
+      "processing_time": "Up to 30 Days",
+      "fee": "100% Free",
+      "official_url": "https://pgportal.gov.in",
+      "is_popular": true,
+      "description": "CPGRAMS is an online 24x7 platform available for citizens to lodge grievances to public authorities on any subject related to service delivery.",
+      "description_hi": "सरकारी सेवाओं में लापरवाही, देरी या भ्रष्टाचार की ऑनलाइन शिकायत दर्ज करने का आधिकारिक मंच।",
+      "tags": [
+        "grievance",
+        "complaint",
+        "helpdesk",
+        "cpgrams",
+        "darpg",
+        "redressal"
+      ],
+      "eligibility_rules": {
+        "min_age": 14,
+        "max_age": 100
+      },
+      "documents": [
+        {
+          "id": "doc_cpg_1",
+          "name": "Complaint description & relevant previous communications / letters",
+          "mandatory": true
+        },
+        {
+          "id": "doc_cpg_2",
+          "name": "Aadhaar or identity proof",
+          "mandatory": true
+        }
+      ],
+      "guidance_steps": [
+        {
+          "step_no": 1,
+          "title": "Lodge Grievance",
+          "description": "Login to pgportal.gov.in and select ministry/department."
+        },
+        {
+          "step_no": 2,
+          "title": "Describe Issue",
+          "description": "Detail facts, office visited, officers contacted, and reference numbers."
+        },
+        {
+          "step_no": 3,
+          "title": "Tracking Token",
+          "description": "Receive unique registration token for SMS tracking."
+        },
+        {
+          "step_no": 4,
+          "title": "Action Taken Report",
+          "description": "Review official Action Taken Report (ATR) and provide feedback rating."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can RTI matters or court cases be filed in CPGRAMS?",
+          "a": "No, sub-judice matters, RTI queries, and personal family disputes are not entertained."
+        }
+      ]
+    }
+  ],
+  "office_locations": [
+    {
+      "id": "off_delhi_1",
+      "name": "Central Common Service Center (CSC) & Seva Kendra - Connaught Place",
+      "type": "Common Service Center (CSC)",
+      "address": "B-Block, Inner Circle, Connaught Place, New Delhi",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110001",
+      "lat": 28.6328,
+      "lng": 77.2197,
+      "phone": "+91 11 2341 5567",
+      "contact_hours": "Mon - Sat: 09:30 AM - 06:00 PM",
+      "services_handled": [
+        "Aadhaar Updates",
+        "PAN Card",
+        "PM-KISAN eKYC",
+        "Ayushman Card",
+        "Passport Consultation",
+        "Voter ID"
+      ]
+    },
+    {
+      "id": "off_delhi_2",
+      "name": "Regional Transport Office (RTO) - Sarai Kale Khan",
+      "type": "RTO Office",
+      "address": "Near Sarai Kale Khan ISBT, Ring Road, New Delhi",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110013",
+      "lat": 28.5898,
+      "lng": 77.2589,
+      "phone": "+91 11 2435 9012",
+      "contact_hours": "Mon - Fri: 10:00 AM - 05:00 PM",
+      "services_handled": [
+        "Permanent Driving License Test",
+        "Commercial Permit",
+        "Vehicle Registration",
+        "Fitness Certificate"
+      ]
+    },
+    {
+      "id": "off_mumbai_1",
+      "name": "Maha e-Seva Kendra - Fort District",
+      "type": "Maha e-Seva Kendra",
+      "address": "Ground Floor, Old Custom House, Fort, Mumbai",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400001",
+      "lat": 18.9322,
+      "lng": 72.8361,
+      "phone": "+91 22 2266 1234",
+      "contact_hours": "Mon - Sat: 09:00 AM - 05:30 PM",
+      "services_handled": [
+        "Income & Domicile Certificates",
+        "Caste Validation",
+        "Ration Card ONORC",
+        "Udyam MSME Registration"
+      ]
+    },
+    {
+      "id": "off_mumbai_2",
+      "name": "RTO Andheri (MH-02)",
+      "type": "RTO Office",
+      "address": "Four Bungalows, D.N. Nagar, Andheri West, Mumbai",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400053",
+      "lat": 19.1315,
+      "lng": 72.8258,
+      "phone": "+91 22 2636 5000",
+      "contact_hours": "Mon - Fri: 09:30 AM - 04:30 PM",
+      "services_handled": [
+        "Learner License",
+        "Permanent DL Track Test",
+        "RC Transfer",
+        "International Driving Permit"
+      ]
+    },
+    {
+      "id": "off_bengaluru_1",
+      "name": "BengaluruOne Citizen Service Center - Indiranagar",
+      "type": "BengaluruOne Center",
+      "address": "100 Feet Road, 12th Main, HAL 2nd Stage, Indiranagar, Bengaluru",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560038",
+      "lat": 12.9719,
+      "lng": 77.6412,
+      "phone": "+91 80 2521 8899",
+      "contact_hours": "Mon - Sun: 08:00 AM - 07:00 PM",
+      "services_handled": [
+        "Electricity/Water Bills",
+        "Property Tax (e-Aasthi)",
+        "Aadhaar Services",
+        "Senior Citizen ID",
+        "Police Verification"
+      ]
+    },
+    {
+      "id": "off_patna_1",
+      "name": "District Tehsildar & RTPS Counter - Patna Sadar",
+      "type": "Tehsil / Sub-Divisional Office",
+      "address": "Collectorate Campus, Gandhi Maidan Road, Patna",
+      "city": "Patna",
+      "state": "Bihar",
+      "pincode": "800001",
+      "lat": 25.6186,
+      "lng": 85.1438,
+      "phone": "+91 612 222 4110",
+      "contact_hours": "Mon - Sat: 10:00 AM - 05:00 PM",
+      "services_handled": [
+        "RTPS Caste/Income/Residence",
+        "Land Mutation (Dakhil Kharij)",
+        "PM-KISAN Physical Verification",
+        "Old Age Pension"
+      ]
+    },
+    {
+      "id": "off_jaipur_1",
+      "name": "e-Mitra Head Kiosk - C-Scheme",
+      "type": "e-Mitra Seva Kendra",
+      "address": "Yojna Bhawan, Tilak Marg, C-Scheme, Jaipur",
+      "city": "Jaipur",
+      "state": "Rajasthan",
+      "pincode": "302005",
+      "lat": 26.9054,
+      "lng": 75.8016,
+      "phone": "+91 141 222 7838",
+      "contact_hours": "Mon - Sat: 09:30 AM - 06:30 PM",
+      "services_handled": [
+        "Jan Aadhaar Card",
+        "Chiranjeevi / Ayushman",
+        "PMAY Application",
+        "Pension Verification",
+        "Mudra Guidance"
+      ]
+    },
+    {
+      "id": "off_lucknow_1",
+      "name": "Jan Suvidha Kendra & Tehsil - Hazratganj",
+      "type": "Jan Suvidha Kendra",
+      "address": "Near GPO, Hazratganj, Lucknow",
+      "city": "Lucknow",
+      "state": "Uttar Pradesh",
+      "pincode": "226001",
+      "lat": 26.8467,
+      "lng": 80.9462,
+      "phone": "+91 522 261 4050",
+      "contact_hours": "Mon - Sat: 10:00 AM - 05:00 PM",
+      "services_handled": [
+        "e-District Certificates",
+        "Ration Card Verification",
+        "Kisan Credit Card",
+        "Scholarship Bonafide Check"
+      ]
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1",
+      "type": "deadline_reminder",
+      "title": "National Scholarship Portal 2026-27 Applications Closing Soon",
+      "title_hi": "राष्ट्रीय छात्रवृत्ति पोर्टल आवेदन की अंतिम तिथि निकट है",
+      "message": "Pre-Matric and Post-Matric scholarship online applications close on 30th September. Complete your institute verification immediately.",
+      "message_hi": "प्री-मैट्रिक और पोस्ट-मैट्रिक छात्रवृत्ति के ऑनलाइन आवेदन 30 सितंबर को बंद हो रहे हैं।",
+      "link": "/services/srv_nsp",
+      "read_status": true,
+      "created_at": "2026-09-09T12:35:34.304Z",
+      "updated_at": "2026-09-09T17:06:18.215Z"
+    },
+    {
+      "id": "notif_2",
+      "type": "scheme_alert",
+      "title": "PM-KISAN 17th Installment Release Date Announced",
+      "title_hi": "पीएम-किसान 17वीं किस्त जारी होने की तारीख घोषित",
+      "message": "The upcoming installment will be credited via DBT directly into Aadhaar-seeded accounts. Verify that your eKYC status is green.",
+      "message_hi": "अगली किस्त सीधे आधार से जुड़े खातों में डीबीटी के जरिए भेजी जाएगी। अपनी ई-केवाईसी जांच लें।",
+      "link": "/services/srv_pmkisan",
+      "read_status": true,
+      "created_at": "2026-09-08T16:35:34.305Z",
+      "updated_at": "2026-09-09T17:06:29.378Z"
+    },
+    {
+      "id": "notif_3",
+      "type": "document_expiry",
+      "title": "Free Aadhaar Document Revalidation Extended",
+      "title_hi": "मुफ्त आधार दस्तावेज नवीनीकरण की अवधि बढ़ाई गई",
+      "message": "UIDAI has extended the free online document update facility for Proof of Identity and Address on myAadhaar portal.",
+      "message_hi": "यूआईडीएआई ने माय-आधार पोर्टल पर पहचान और पते के दस्तावेज मुफ्त अपडेट करने की अवधि बढ़ा दी है।",
+      "link": "/services/srv_aadhaar",
+      "read_status": true,
+      "created_at": "2026-09-06T16:35:34.305Z"
+    }
+  ],
+  "grievances": [
+    {
+      "id": "gri_1788973897687_93vi",
+      "created_at": "2026-09-09T17:11:37.687Z",
+      "tracking_number": "GOV-GRV-2026-6323",
+      "user_id": null,
+      "user_name": "ankit ",
+      "user_email": "ak4007193@gmail.com",
+      "phone": "7061808258",
+      "category": "Education & Student",
+      "service_name": "PM-scholar ship ",
+      "subject": "application panding",
+      "description": "..toto",
+      "status": "Resolved",
+      "admin_response": "Grievance received and registered. Assigned to the respective departmental nodal officer for inspection.",
+      "updated_at": "2026-09-09T17:12:41.067Z"
+    },
+    {
+      "id": "grv_1",
+      "tracking_number": "GOV-GRV-2026-8819",
+      "user_id": "usr_citizen_1",
+      "user_name": "Rajesh Kumar Sharma",
+      "user_email": "citizen@govdesk.in",
+      "category": "Farmer & Agriculture",
+      "service_name": "PM-KISAN",
+      "subject": "16th Installment eKYC status not updated after bank biometric",
+      "description": "Completed biometric eKYC at Connaught Place CSC on 12th Aug, but portal still displays pending verification.",
+      "status": "Under Review",
+      "admin_response": "Your ticket has been assigned to the District Agriculture Nodal Officer for re-synchronization with UIDAI gateway.",
+      "created_at": "2026-09-07T16:35:34.444Z",
+      "updated_at": "2026-09-08T16:35:34.444Z"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "fb_1",
+      "user_id": "usr_citizen_1",
+      "user_name": "Rajesh Kumar Sharma",
+      "service_id": "srv_pmkisan",
+      "service_name": "PM-KISAN",
+      "rating": 5,
+      "comment": "Clear document checklist and step-by-step guidance made applying very straightforward!",
+      "created_at": "2026-09-06T16:35:34.444Z"
+    }
+  ],
+  "saved_services": [
+    {
+      "id": "save_1",
+      "user_id": "usr_citizen_1",
+      "service_id": "srv_pmkisan",
+      "created_at": "2026-09-09T16:35:34.444Z"
+    },
+    {
+      "id": "save_2",
+      "user_id": "usr_citizen_1",
+      "service_id": "srv_ayushman",
+      "created_at": "2026-09-09T16:35:34.444Z"
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": "aud_1788973961072_fzjd",
+      "created_at": "2026-09-09T17:12:41.072Z",
+      "admin_id": "usr_admin_1",
+      "admin_name": "National Portal Admin",
+      "action": "UPDATE_GRIEVANCE",
+      "entity": "grievances",
+      "details": "Updated grievance GOV-GRV-2026-6323 status to Resolved",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "id": "aud_1788973949872_a32v",
+      "created_at": "2026-09-09T17:12:29.872Z",
+      "admin_id": "usr_admin_1",
+      "admin_name": "National Portal Admin",
+      "action": "UPDATE_GRIEVANCE",
+      "entity": "grievances",
+      "details": "Updated grievance GOV-GRV-2026-6323 status to Under Review",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "id": "log_1",
+      "admin_id": "usr_admin_1",
+      "admin_name": "National Portal Admin",
+      "action": "SYSTEM_INITIALIZE",
+      "entity": "System",
+      "details": "GovDesk digital platform database initialized with 10 categories and initial schemes.",
+      "ip": "127.0.0.1",
+      "created_at": "2026-09-09T16:35:34.444Z"
+    }
+  ],
+  "otp_verifications": []
+}
